@@ -6,6 +6,92 @@
     <title>Denis Kohleber</title>
 </head>
 <body>
-
+    <header>
+        <h1>Denis Kohleber</h1>
+        <h2>FRONT-END DEVELOPER</h2>
+        <div class="linkContainer">
+            <img class="gitIcon" src="<%=require('./assets/github.svg')%>" alt="github">
+            <img class="linkedIn" src="<%=require('./assets/linkedin.svg')%>" alt="linkedin">
+        </div>
+        <div class="photoContainer">
+            <img class="photo" src="<%=require('./assets/photo_2143w.png')%>" alt="Denis Kohleber"
+            srcset="
+            <%=require('./assets/photo_1200w.png')%> 1x,
+            <%=require('./assets/photo_2143w.png')%> 2x">
+        </div>
+        <nav>
+            <button class="aboutBtn navBtn">About</button>
+            <button class="skillsBtn navBtn">Kenntnisse</button>
+            <button class="projectsBtn navBtn">Projekte</button>
+            <button class="contactBtn navBtn">Kontakt</button>
+        </nav>
+    </header>
+    <main>
+        <section class="aboutMeSection">
+            <h3 class="aboutMeHeader">About me ...</h3>
+            <article class="aboutMe">
+                <p class="aboutMeText">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur at, tempore quo atque accusantium id qui sapiente blanditiis. Harum officiis, quas sed provident quo omnis ex? Minus consequuntur odio fugit?
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae nemo praesentium deserunt dolore labore excepturi quisquam necessitatibus laboriosam omnis aliquid quos sequi odio quidem explicabo ducimus nobis, doloremque fugiat accusantium.
+                </p>
+            </article>
+        </section>
+        <section class="skillsSection">
+            <h3 class="skillsHeader">Kenntnisse</h3>
+            <article class="skill01 skill">
+                <img src="" alt="" class="skillImg01 skillImg">
+                <p class="skillText01 skillText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni perferendis voluptatibus nam odit accusantium saepe vel pariatur modi labore velit assumenda, ...</p>
+            </article>
+            <article class="skill02 skill">
+                <img src="" alt="" class="skillImg02 skillImg">
+                <p class="skillText02 skillText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni perferendis voluptatibus nam odit accusantium saepe vel pariatur modi labore velit assumenda, ...</p>
+            </article>
+            <article class="skill03 skill">
+                <img src="" alt="" class="skillImg03 skillImg">
+                <p class="skillText03 skillText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni perferendis voluptatibus nam odit accusantium saepe vel pariatur modi labore velit assumenda, ...</p>
+            </article>
+            <article class="skill04 skill">
+                <img src="" alt="" class="skillImg04 skillImg">
+                <p class="skillText04 skillText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni perferendis voluptatibus nam odit accusantium saepe vel pariatur modi labore velit assumenda, ...</p>
+            </article>
+            <article class="skill05 skill">
+                <img src="" alt="" class="skillImg05 skillImg">
+                <p class="skillText05 skillText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni perferendis voluptatibus nam odit accusantium saepe vel pariatur modi labore velit assumenda, ...</p>
+            </article>
+        </section>
+        <section class="projectsSection">
+            <h3 class="projectsHeader">Projekte</h3>
+            <article class="project01">
+                <img src="" alt="" class="projectImg01 projectImg">
+                <h4 class="projectHeader01 projectheader">Schach</h4>
+                <p class="projectText01 projectText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis voluptates vel accusamus perspiciatis autem similique dolores, eaque maiores pariatur. Velit, soluta! Accusamus inventore perferendis quam optio quo dolorum veniam quaerat.</p>
+            </article>
+            <article class="project02">
+                <img src="" alt="" class="projectImg02 projectImg">
+                <h4 class="projectHeader02 projectheader">Wetter App</h4>
+                <p class="projectText02 projectText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora aliquid rem aut sequi quia. Veniam inventore at et, natus doloremque omnis obcaecati enim atque eaque ex maiores, asperiores hic quos?</p>
+            </article>
+        </section>
+        <section class="contactSection">
+            <h3 class="contactHeader">Kontakt
+                <article class="contact">
+                    <div class="placeholder">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur tempora omnis repellendus repellat eveniet dignissimos quia itaque enim, quae, ducimus voluptas error magni! Est reprehenderit laudantium, dignissimos quisquam provident incidunt!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium tempore placeat eveniet voluptatum est, dolorum quidem explicabo voluptatem ullam doloribus quas. Natus nostrum et a atque quibusdam esse unde repellendus!
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi, ipsa. Eveniet ad est harum debitis. Nesciunt, et consequuntur. Distinctio temporibus repellendus laudantium repellat blanditiis veritatis error officiis veniam iure vitae.
+                    </div>
+                </article>
+            </h3>
+        </section>
+    </main>
+    <footer>
+        <p class="copyright">© Denis Kohleber</p>
+        <div>
+            <p class="linkedinText">LinkedIn</p>
+            <img class="linkedIn" src="<%=require('./assets/linkedin.svg')%>" alt="linkedin">
+        </div>
+        <div>
+            <p class="gitText">GitHub</p>
+            <img class="gitIcon" src="<%=require('./assets/github.svg')%>" alt="github">
+        </div>
+    </footer>
 </body>
 </html>
