@@ -7,12 +7,27 @@
 </head>
 <body>
     <header>
-        <h1>Denis Kohleber</h1>
-        <h2>FRONT-END DEVELOPER</h2>
-        <div class="linkContainer">
-            <img class="gitIcon" src="<%=require('./assets/github.svg')%>" alt="github">
-            <img class="linkedIn" src="<%=require('./assets/linkedin.svg')%>" alt="linkedin">
+        <div class="boxes">
+            <div class="box01 box"></div>
+            <div class="box02 box"></div>
+            <div class="box03 box"></div>
+            <div class="box04 box"></div>
+            <div class="box05 box"></div>
+            <div class="box06 box"></div>
+            <div class="box07 box"></div>
+            <div class="box08 box"></div>
+            <div class="box09 box"></div>
         </div>
+        <div class="headerPlaceholder"></div>
+        <div class="headerContainer">
+            <h1>Denis Kohleber</h1>
+            <h2>FRONT-END DEVELOPER</h2>
+            <div class="linkContainer">
+                <a href=""><img class="gitIcon" src="<%=require('./assets/github.svg')%>" alt="github"></a>
+                <a href=""><img class="linkedIn" src="<%=require('./assets/linkedin.svg')%>" alt="linkedin"></a>
+            </div>
+        </div>
+        <div class="headerPlaceholder2"></div>
         <div class="photoContainer">
             <img class="photo" src="<%=require('./assets/photo_2143w.png')%>" alt="Denis Kohleber"
             srcset="
@@ -20,7 +35,7 @@
             <%=require('./assets/photo_2143w.png')%> 2x">
         </div>
         <nav>
-            <button class="aboutBtn navBtn">About</button>
+            <button class="aboutBtn navBtn">Über mich</button>
             <button class="skillsBtn navBtn">Kenntnisse</button>
             <button class="projectsBtn navBtn">Projekte</button>
             <button class="contactBtn navBtn">Kontakt</button>
@@ -83,14 +98,16 @@
         </section>
     </main>
     <footer>
-        <p class="copyright">© Denis Kohleber</p>
-        <div>
-            <p class="linkedinText">LinkedIn</p>
-            <img class="linkedIn" src="<%=require('./assets/linkedin.svg')%>" alt="linkedin">
-        </div>
-        <div>
-            <p class="gitText">GitHub</p>
-            <img class="gitIcon" src="<%=require('./assets/github.svg')%>" alt="github">
+        <p class="copyright">© Denis Kohleber 2024</p>
+        <div class="linkContainerFooter">
+            <a class="linkedinLinkContainer" href="">
+                <p class="linkedinText">LinkedIn</p>
+                <img class="linkedIn" src="<%=require('./assets/linkedin.svg')%>" alt="linkedin">
+            </a>
+            <a class="githubLinkContainer" href="">
+                <p class="gitText">GitHub</p>
+                <img class="gitIcon" src="<%=require('./assets/github.svg')%>" alt="github">
+            </a>
         </div>
     </footer>
 </body>
