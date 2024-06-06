@@ -34,15 +34,34 @@
             <%=require('./assets/photo_1200w.png')%> 1x,
             <%=require('./assets/photo_2143w.png')%> 2x">
         </div>
-        <nav>
-            <button class="aboutBtn navBtn">Über mich</button>
-            <button class="skillsBtn navBtn">Kenntnisse</button>
-            <button class="projectsBtn navBtn">Projekte</button>
-            <button class="contactBtn navBtn">Kontakt</button>
+        <nav class="navHeader">
+            <a href="#aboutMeSection" class="aboutLinkHeader navLinkHeader">Über mich</a>
+            <a href="#skillsSection" class="skillsLinkHeader navLinkHeader">Kenntnisse</a>
+            <a href="#projectsSection" class="projectsLinkHeader navLinkHeader">Projekte</a>
+            <a href="#contactSection" class="contactLinkHeader navLinkHeader">Kontakt</a>
         </nav>
     </header>
+
     <main>
-        <section class="aboutMeSection">
+        <nav class="navMain">
+            <h3 class="overviewHeader">Übersicht</h3>
+            <a href="#aboutMeSection" class="aboutMeSectionLinkMain navLinkMain">Über mich</a>
+            <a href="#skillsSection" class="skillsSectionLinkMain navLinkMain">Kenntnisse</a>
+            <a href="#projectsSection" class="projectsSectionLinkMain navLinkMain">Projekte</a>
+            <div class="dropdownNavMain" id="dropdownMenu">
+                <a href="#chessArticle" class="chessArticleLinkMain navLinkMain">
+                    <img src="<%=require('./assets/menu-right.svg')%>" alt="">
+                    <p>Schach</p>
+                </a>
+                <a href="#weatherAppArticle" class="weatherAppArticleLinkMain navLinkMain">
+                    <img src="<%=require('./assets/menu-right.svg')%>" alt="">
+                    <p>Wetter App</p>
+                </a>
+            </div>
+            <a href="#contactSection" class="contactSectionLinkMain navLinkMain">Kontakt</a>
+        </nav>
+
+        <section class="aboutMeSection section" id="aboutMeSection">
             <h3 class="aboutMeHeader">About me ...</h3>
             <article class="aboutMe">
                 <p class="aboutMeText">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur at, tempore quo atque accusantium id qui sapiente blanditiis. Harum officiis, quas sed provident quo omnis ex? Minus consequuntur odio fugit?
@@ -50,7 +69,7 @@
                 </p>
             </article>
         </section>
-        <section class="skillsSection">
+        <section class="skillsSection section" id="skillsSection">
             <h3 class="skillsHeader">Kenntnisse</h3>
             <article class="skill01 skill">
                 <img src="" alt="" class="skillImg01 skillImg">
@@ -73,20 +92,20 @@
                 <p class="skillText05 skillText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni perferendis voluptatibus nam odit accusantium saepe vel pariatur modi labore velit assumenda, ...</p>
             </article>
         </section>
-        <section class="projectsSection">
+        <section class="projectsSection section" id="projectsSection">
             <h3 class="projectsHeader">Projekte</h3>
-            <article class="project01">
+            <article class="project01 section" id="chessArticle">
                 <img src="" alt="" class="projectImg01 projectImg">
                 <h4 class="projectHeader01 projectheader">Schach</h4>
                 <p class="projectText01 projectText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis voluptates vel accusamus perspiciatis autem similique dolores, eaque maiores pariatur. Velit, soluta! Accusamus inventore perferendis quam optio quo dolorum veniam quaerat.</p>
             </article>
-            <article class="project02">
+            <article class="project02 section" id="weatherAppArticle">
                 <img src="" alt="" class="projectImg02 projectImg">
                 <h4 class="projectHeader02 projectheader">Wetter App</h4>
                 <p class="projectText02 projectText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora aliquid rem aut sequi quia. Veniam inventore at et, natus doloremque omnis obcaecati enim atque eaque ex maiores, asperiores hic quos?</p>
             </article>
         </section>
-        <section class="contactSection">
+        <section class="contactSection section" id="contactSection">
             <h3 class="contactHeader">Kontakt
                 <article class="contact">
                     <div class="placeholder">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur tempora omnis repellendus repellat eveniet dignissimos quia itaque enim, quae, ducimus voluptas error magni! Est reprehenderit laudantium, dignissimos quisquam provident incidunt!

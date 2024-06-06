@@ -1,8 +1,8 @@
-import printMessage from "./js/dummy";
+import Navbar from "./js/main_ui";
 import "./style/style.css";
 
 "use strict";
 
 
 
-printMessage();
+Navbar.addFollowByScroll();
