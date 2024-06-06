@@ -309,6 +309,7 @@ h2 {
     z-index: 1000;
     width: 100%;
     gap: 5px;
+    box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
 }
 
 .aboutLinkHeader {
@@ -326,6 +327,10 @@ h2 {
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     position: relative;
     text-align: center;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navLinkHeader:hover {
@@ -348,6 +353,57 @@ h2 {
 .navLinkHeader:hover:after {
     transform: scaleX(1);
     transform-origin: bottom center;
+}
+
+.projectsLinkHeader > img {
+    width: 30px;
+    filter: var(--filterWhite);
+    margin: -5px;
+}
+.projectsLinkHeader:hover > img {
+    filter: var(--filterYellow)
+} 
+
+.dropdownContent {
+    background-color: #2020208a;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.2);
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 0.2s linear;
+    border-radius: 0px 0 5px 5px;
+}
+
+.dropdownLink {
+    text-decoration: none;
+    padding: 2vh 1vh;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--secondaryColor);
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdownLink:nth-child(n) {
+    opacity: 0;
+    transition: opacity 0.2s linear 0.3s;
+}
+
+
+.dropdownLink:hover {
+    background-color: var(--accentColor);
+    color: var(--primaryColor2);
+}
+
+.dropdownNavHeader:hover .dropdownContent {
+    transform: scaleY(1);
+}
+
+.dropdownNavHeader:hover .dropdownContent > .dropdownLink:nth-child(n){
+    opacity: 1;
 }
 
 /* Main */

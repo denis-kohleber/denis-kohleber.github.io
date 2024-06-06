@@ -37,7 +37,6 @@ const Navbar = {
         sectionId === 'projectsSection') {
             dropdownMenu.classList.add('active');
             dropdownMenu.style.maxHeight = dropdownMenu.scrollHeight + "px";
-            console.log('Yes');
         } else {
             dropdownMenu.classList.remove('active');
             dropdownMenu.style.maxHeight = null;
