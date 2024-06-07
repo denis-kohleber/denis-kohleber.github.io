@@ -48,7 +48,7 @@ table {
 
 /* CSS-Reset End */
 
-/* Skelett */
+/* || SKELETT */
 
 html, body {
     scroll-behavior: smooth; 
@@ -78,7 +78,8 @@ h1, h2, h3, h4 {
     padding: 0px;
 }
 
-/* Header Background Animation*/
+/* || HEADER */
+/* || HEADER - Background Animation*/
 
 .boxes {
     position: absolute;
@@ -176,7 +177,7 @@ h1, h2, h3, h4 {
     }
 }
 
-/* Header */
+/* || HEADER - Main Part */
 
 header {
     position: relative;
@@ -233,22 +234,22 @@ h2 {
     position: relative;
     transform-origin: right;
     box-shadow: 13px 13px 30px 4px rgba(0,0,0,0.9);
-    animation: fade-in-left 1s linear 1s forwards;
+    animation: fade-in-left 0.6s linear 0.8s forwards;
 }
 
 .headerContainer > :nth-child(1) {
     opacity: 0;
-    animation: fade-in 2s forwards 2.5s;
+    animation: fade-in 0.5s forwards 1.5s ease-in;
 }
 
 .headerContainer > :nth-child(2) {
     opacity: 0;
-    animation: fade-in 2s forwards 3s;
+    animation: fade-in 0.5s forwards 2s ease-in;
 }
 
 .headerContainer > :nth-child(3) {
     opacity: 0;
-    animation: fade-in 2s forwards 3.5s;
+    animation: fade-in 0.5s forwards 2.5s ease-in;
 }
 
 .photoContainer {
@@ -261,7 +262,7 @@ h2 {
     width: 90%;
     border-radius: 20px;
     box-shadow: 13px 13px 30px 4px rgba(0,0,0,0.9);
-    animation: fade-in-down 1.5s forwards;
+    animation: fade-in-down 0.8s forwards;
 }
 
 @keyframes fade-in-left {
@@ -289,16 +290,13 @@ h2 {
         opacity: 0;
         transform: translateY(-8vh);
         }
-    70% {
-        transform: translateY(+1vh);
-        }
     100% {
         opacity: 1;
         transform: translateY(0);
         }
 }
 
-/* Navigation-Board Header */
+/* || HEADER - Navigation-Board Header */
 
 .navHeader {
     display: flex;
@@ -344,10 +342,14 @@ h2 {
     transform: scaleX(0);
     height: 6px;
     bottom: 0;
-    left: 0%;
+    left: 0;
     background-color: var(--accentColor); 
     transform-origin: bottom center;
     transition: transform 0.25s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accentColor);
 }
   
 .navLinkHeader:hover:after {
@@ -375,6 +377,11 @@ h2 {
     border-radius: 0px 0 5px 5px;
 }
 
+.dropdownContent > :last-child, 
+.dropdownContent > :last-child:after {
+    border-radius: 0px 0 5px 5px;
+}
+
 .dropdownLink {
     text-decoration: none;
     padding: 2vh 1vh;
@@ -385,6 +392,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .dropdownLink:nth-child(n) {
@@ -392,10 +400,32 @@ h2 {
     transition: opacity 0.2s linear 0.3s;
 }
 
-
-.dropdownLink:hover {
+.dropdownLink:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.4s;
     background-color: var(--accentColor);
     color: var(--primaryColor2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdownLink:nth-of-type(1)::after {
+    content: 'Schach';
+}
+
+.dropdownLink:nth-of-type(2)::after {
+    content: 'Wetter App';
+}
+
+.dropdownLink:hover:after {
+    opacity: 1;
 }
 
 .dropdownNavHeader:hover .dropdownContent {
@@ -406,7 +436,7 @@ h2 {
     opacity: 1;
 }
 
-/* Main */
+/* || MAIN */
 
 main {
     padding: 0 0 0 12vw;
@@ -420,7 +450,7 @@ main > * {
     padding: 12vh 0 0;
 }
 
-/* Navigation-Board Main */
+/* || MAIN - Navigation-Board */
 
 .navMain {
     display: flex;
@@ -499,7 +529,7 @@ main > * {
         }
 }
 
-/* Section About */
+/* || SECTION ABOUT */
 
 .aboutMeSection {
     grid-area: 1 / 1 / 2 / 2;
@@ -507,33 +537,34 @@ main > * {
 
 }
 
-/* Section Skills */
+/* || SECTION SKILLS */
 
 .skillsSection {
     grid-area: 2 / 1 / 3 / 2;
     height: 100vh;
 }
 
-/* Section Projects */
+/* || SECTION PROJECTS */
 
 .projectsSection {
     grid-area: 3 / 1 / 4 / 2;
     height: 100vh;
-
+    
 }
 
-/* Section Contact */
+/* || SECTION PROJECTS - Chess */
+
+.projectsSection > * {
+    height: 40vh;
+}
+
+/* || SECTION CONTACT */
 
 .contactSection {
     grid-area: 4 / 1 / 5 / 2;
     height: 100vh;
 }
 
-/* Article Chess */
-
-.projectsSection > * {
-    height: 40vh;
-}
 
 /* Footer */
 
