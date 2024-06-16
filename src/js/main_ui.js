@@ -1,5 +1,5 @@
 "use strict";
-const Navbar = {
+const SideNavbar = {
     addFollowByScroll() {
         document.addEventListener('DOMContentLoaded', function () { 
             const navbarLinks = document.querySelectorAll('.navLinkMain'); 
@@ -21,7 +21,7 @@ const Navbar = {
                         }); 
 
                         // Activate Dropdown
-                        Navbar.activateDropdown(sectionId);
+                        SideNavbar.activateDropdown(sectionId);
 
                         document.querySelector('.' + sectionId + 'LinkMain').classList.add('active'); 
                     } 
@@ -44,4 +44,41 @@ const Navbar = {
     },
 };
 
-export default Navbar;
+const MainNavbar = {
+    linkContainer: document.getElementById('linkContainer'),
+    menuBtn: document.getElementById('menuBtn'),
+    body: document.getElementById('body'),
+    addNavbarEvent() {
+        MainNavbar.removeClasses();
+    },
+    addClasses() {
+        MainNavbar.linkContainer.classList.add('showNav');
+        MainNavbar.body.classList.add('showNav');
+        MainNavbar.switchEvents();
+    },
+    removeClasses() {
+        MainNavbar.linkContainer.classList.remove('showNav');
+        MainNavbar.body.classList.remove('showNav');
+        MainNavbar.switchEventsReserve();
+    },
+    switchEvents() {
+        MainNavbar.menuBtn.removeEventListener('click', MainNavbar.addClasses);
+        MainNavbar.linkContainer.addEventListener('click', MainNavbar.removeClasses); 
+        MainNavbar.menuBtn.addEventListener('click', MainNavbar.removeClasses);
+        MainNavbar.changeImgCloseIcon();
+    },
+    switchEventsReserve() {
+        MainNavbar.menuBtn.removeEventListener('click', MainNavbar.removeClasses);
+        MainNavbar.linkContainer.removeEventListener('click', MainNavbar.removeClasses);
+        MainNavbar.menuBtn.addEventListener('click', MainNavbar.addClasses);
+        MainNavbar.changeImgMenuIcon();
+    },
+    changeImgCloseIcon() {
+        MainNavbar.menuBtn.style.backgroundImage = "url('close.svg')";
+    },
+    changeImgMenuIcon() {
+        MainNavbar.menuBtn.style.backgroundImage = "url('menu.svg')";
+    },
+};
+
+export { SideNavbar, MainNavbar };

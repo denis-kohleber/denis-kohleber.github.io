@@ -5,49 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Denis Kohleber</title>
 </head>
-<body>
+<body id="body">
+    <nav class="nav">
+        <div class="box"></div>
+        <div class="linkContainer" id="linkContainer">
+            <a href="#aboutMeSection" class="aboutLinkHeader navLink">Über mich</a>
+            <a href="#skillsSection" class="skillsLinkHeader navLink">Kenntnisse</a>
+            <a href="#projectsSection" class="projectsLink navLink">Projekte</a>
+            <a href="#contactSection" class="contactLink navLink">Kontakt</a>
+        </div>
+        <button class="menuBtn" id="menuBtn"></button>
+    </nav>
     <header>
-        <nav class="navHeader">
-            <a href="#aboutMeSection" class="aboutLinkHeader navLinkHeader">Über mich</a>
-            <a href="#skillsSection" class="skillsLinkHeader navLinkHeader">Kenntnisse</a>
-            <div class="dropdownNavHeader">
-                <a href="#projectsSection" class="projectsLinkHeader navLinkHeader">
-                    Projecte
-                    <img src="<%=require('./assets/menu-down.svg')%>" alt="">
-                </a>
-                <div class="dropdownContent" id="dropdownContent">
-                    <a href="#chessArticle" class="dropdownLink">Schach</a>
-                    <a href="#weatherAppArticle" id="last" class="dropdownLink weatherAppDropdownLink">Wetter App</a>
-                </div>
-            </div>
-            <a href="#contactSection" class="contactLinkHeader navLinkHeader">Kontakt</a>
-        </nav>
         <div class="boxes">
-            <div class="box01 box"></div>
-            <div class="box02 box"></div>
-            <div class="box03 box"></div>
-            <div class="box04 box"></div>
-            <div class="box05 box"></div>
-            <div class="box06 box"></div>
-            <div class="box07 box"></div>
-            <div class="box08 box"></div>
-            <div class="box09 box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
         </div>
-        <div class="headerPlaceholder"></div>
-        <div class="headerContainer">
-            <h1>Denis Kohleber</h1>
-            <h2>FRONT-END DEVELOPER</h2>
-            <div class="linkContainer">
-                <a href=""><img class="gitIcon" src="<%=require('./assets/github.svg')%>" alt="github"></a>
-                <a href=""><img class="linkedIn" src="<%=require('./assets/linkedin.svg')%>" alt="linkedin"></a>
-            </div>
-        </div>
-        <div class="headerPlaceholder2"></div>
         <div class="photoContainer">
             <img class="photo" src="<%=require('./assets/photo_2143w.png')%>" alt="Denis Kohleber"
             srcset="
             <%=require('./assets/photo_1200w.png')%> 1x,
             <%=require('./assets/photo_2143w.png')%> 2x">
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div class="headerContainer">
+            <h1>Denis Kohleber</h1>
+            <h2>FRONT-END DEVELOPER</h2>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
         </div>
     </header>
 
@@ -71,7 +74,7 @@
         </nav>
 
         <section class="aboutMeSection section" id="aboutMeSection">
-            <h3 class="aboutMeHeadline"><div></div>Was mich betrifft ...</h3>
+            <h3 class="aboutMeHeadline">Was mich betrifft ...</h3>
             <article class="aboutMe">
                 <div class="boxContainer">
                     <div></div>
@@ -87,7 +90,7 @@
         </section>
 
         <section class="skillsSection section" id="skillsSection">
-            <h3 class="skillsHeadline"><div></div>Kenntnisse</h3>
+            <h3 class="skillsHeadline">Kenntnisse</h3>
             <article class="skill01 skill">
                 <img src="" alt="" class="skillImg01 skillImg">
                 <p class="skillText01 skillText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni perferendis voluptatibus nam odit accusantium saepe vel pariatur modi labore velit assumenda, ...</p>
@@ -111,7 +114,7 @@
         </section>
 
         <section class="projectsSection section" id="projectsSection">
-            <h3 class="projectsHeadline"><div></div>Projekte</h3>
+            <h3 class="projectsHeadline">Projekte</h3>
             <article class="project01 section" id="chessArticle">
                 <img src="" alt="" class="projectImg01 projectImg">
                 <h4 class="projectHeadline01 projectHeadline">Schach</h4>
@@ -125,7 +128,7 @@
         </section>
 
         <section class="contactSection section" id="contactSection">
-            <h3 class="contactHeadline"><div></div>Kontakt</h3>
+            <h3 class="contactHeadline">Kontakt</h3>
                 <article class="contact">
                     <div class="placeholder">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur tempora omnis repellendus repellat eveniet dignissimos quia itaque enim, quae, ducimus voluptas error magni! Est reprehenderit laudantium, dignissimos quisquam provident incidunt!
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium tempore placeat eveniet voluptatum est, dolorum quidem explicabo voluptatem ullam doloribus quas. Natus nostrum et a atque quibusdam esse unde repellendus!

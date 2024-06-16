@@ -1,8 +1,8 @@
-import Navbar from "./js/main_ui";
+import { SideNavbar, MainNavbar } from "./js/main_ui";
 import "./style/style.css";
 
 "use strict";
 
 
-
-Navbar.addFollowByScroll();
+MainNavbar.addNavbarEvent();
+SideNavbar.addFollowByScroll();
