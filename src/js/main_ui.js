@@ -31,12 +31,14 @@ const SideNavbar = {
     },
     activateDropdown(sectionId) {
         const dropdownMenu = document.getElementById('dropdownMenu');
+        const projectsSection = document.getElementById('projectsSection');
 
         if(sectionId === 'chessArticle' || 
         sectionId === 'weatherAppArticle' ||
         sectionId === 'projectsSection') {
             dropdownMenu.classList.add('active');
             dropdownMenu.style.maxHeight = dropdownMenu.scrollHeight + "px";
+            projectsSection.classList.add('active'); 
         } else {
             dropdownMenu.classList.remove('active');
             dropdownMenu.style.maxHeight = null;
