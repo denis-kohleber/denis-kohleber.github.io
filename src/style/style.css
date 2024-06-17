@@ -57,8 +57,8 @@ html, body {
     font-family: 'Roboto', sans-serif;
     color: var(--secondaryColor);
     --primaryColor: #121212;
-    --primaryColor2: #181818;
-    --primaryColor3: #222222;
+    --primaryColor2: #202020;
+    --primaryColor3: #242424;
     --secondaryColor: #FFFFFF;
     --secondaryColor2: #a3a3a3;
     --accentColor: #ffd470;
@@ -69,6 +69,11 @@ html, body {
     --filterSecondaryColor2:  invert(75%) sepia(5%) saturate(10%) hue-rotate(349deg) brightness(88%) contrast(85%);
     --shodowStandart: 8px 8px 8px 0px rgba(0,0,0,0.2);
     --contentSpace: min(15vh, 130px);
+    --radiusSmallBox: min(min(1vw, 1vh), 5px);
+    --radiusBigBox: 15%;
+    --headlineMarginBottom: 80px;
+    --headlineMarginBottomMediumScreen: 60px;
+    --headlineMarginBottomSmallScreen: 40px;
 }
 
 body {
@@ -179,6 +184,10 @@ h1, h2, h3, h4 {
     .menuBtn {
         display: block;
     }
+    
+    .nav {
+        height: 60px;
+    }
 
     .linkContainer {
         display: flex;
@@ -188,7 +197,7 @@ h1, h2, h3, h4 {
         top: 0;
         left: 0;
         z-index: -1;
-        padding-top: 70px;
+        padding-top: 60px;
         height: 100%;
         width: 100%;
         background-color: var(--primaryColor2);
@@ -202,7 +211,7 @@ h1, h2, h3, h4 {
     }
 
     .linkContainer > .navLink {
-        min-height: 70px;
+        min-height: 60px;
         border-bottom: 1px solid var(--primaryColor3);
     }
 
@@ -354,7 +363,7 @@ h1, h2, h3, h4 {
     position: absolute;
     background: var(--primaryColor3);
     bottom: -100px;
-    border-radius: 15%;
+    border-radius: var(--radiusBigBox);
 }
 
 @keyframes animateBigBoxes {
@@ -394,7 +403,7 @@ header {
     grid-template: minmax(0, 1000px) auto / auto;
     gap: 30px;
     max-width: 160vh;
-    max-height: 180vw;
+    max-height: 300vw;
     align-content: center;
 }
 
@@ -409,7 +418,7 @@ header {
 .headerContainer > .box {
     width: clamp(30px, min(8vh, 8vw), 70px);
     height: clamp(30px, min(8vh, 8vw), 70px);
-    border-radius: 15%;
+    border-radius: var(--radiusBigBox);
     background-color: var(--secondaryColor);
     opacity: 0;
     animation: fade-in 0.5s forwards 1s ease-in;
@@ -451,7 +460,7 @@ h2 {
     grid-template: 85% 15% / 1fr auto;
     z-index: 1;
     min-height: 250px;
-    max-height: 800px;
+    max-height: min(800px, 70vh);
     gap: min(min(2vw, 2vh), 15px);
     animation: fade-in-down 1s forwards ease-in;
     opacity: 0;
@@ -459,14 +468,14 @@ h2 {
 
 .photoContainer > :nth-child(2) {
     grid-area: 1 / 2 / 2 / 3;
-    border-radius: min(min(1vw, 1vh), 5px);
+    border-radius: var(--radiusSmallBox);
     width: min(min(4vw, 4vh), 30px);
     background-color: var(--accentColor);
 }
 
 .photoContainer > :nth-child(3) {
     grid-area: 2 / 2 / 3 / 3;
-    border-radius: min(min(1vw, 1vh), 5px);
+    border-radius: var(--radiusSmallBox);
     width: min(min(4vw, 4vh), 30px);
     background-color: var(--secondaryColor);
 }
@@ -505,10 +514,17 @@ h2 {
     }
 }
 
+@media screen and (max-width: 400px) {
+    .photoContainer {
+        justify-self: center;
+    }
+}
+
 /* || MAIN */
 
 h3 {
     font-size: 4rem;
+    margin-bottom: var(--headlineMarginBottom);
 }
 
 main {
@@ -520,6 +536,20 @@ main {
 main > * {
     padding-top: var(--contentSpace);
     padding-bottom: var(--contentSpace);
+}
+
+@media screen and (max-width: 1000px) {
+    h3 {
+        font-size: 3rem;
+        margin-bottom: var(--headlineMarginBottomMediumScreen);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h3 {
+        font-size: 2.5rem;
+        margin-bottom: var(--headlineMarginBottomSmallScreen);
+    }
 }
 
 /* || MAIN - Navigation-Board */
@@ -613,10 +643,28 @@ main > * {
 
 /* || SECTION ABOUT */
 
+
+
 .aboutMeSection {
     grid-area: 1 / 1 / 2 / 2;
-    padding-right: 0;
-    color: var(--primaryColor);
+    position: relative;
+    background-color: var(--primaryColor2);
+}
+
+/* Background now overflow the sides */
+.aboutMeSection.bg { 
+    box-shadow: 0 0 0 100vmax var(--primaryColor2);
+    clip-path: inset(0 -100vmax); 
+    z-index: -1;
+}
+
+.aboutMeHeadline > .box {
+    width: 20%;
+    height: 20px;
+    display: inline-block;
+    background-color: var(--accentColor);
+    border-radius: var(--radiusSmallBox);
+    margin-right: 20px;
 }
 
 .aboutMe {
@@ -630,6 +678,17 @@ main > * {
     width: clamp(60px, 6vw, 90px);;
     height: clamp(160px, 16vw, 240px);
     min-width: clamp(60px, 6vw, 90px);
+}
+
+@media screen and (max-width: 550px) {
+    .aboutMe {
+        flex-flow: column-reverse;
+    }
+
+    .boxContainer {
+        transform: rotate(-90deg);
+        margin: -50px;
+    }
 }
 
 .boxContainer > * {
@@ -676,6 +735,12 @@ main > * {
     font-size: 1.4rem;
     color: var(--secondaryColor); 
     max-width: 800px;
+}
+
+@media screen and (max-width: 600px) {
+    .aboutMeText {
+        font-size: 1.2rem;
+    }
 }
 
 /* || SECTION SKILLS */
