@@ -59,7 +59,7 @@
             <h3 class="overviewHeader">Übersicht</h3>
             <a href="#aboutMeSection" class="aboutMeSectionLinkMain navLinkMain">Über mich</a>
             <a href="#skillsSection" class="skillsSectionLinkMain navLinkMain">Kenntnisse</a>
-            <a href="#projectsSection" id="projectsSection" class="projectsSectionLinkMain navLinkMain">Projekte</a>
+            <a href="#projectsSection" id="projectsSectionNav" class="projectsSectionLinkMain navLinkMain">Projekte</a>
             <div class="dropdownNavMain" id="dropdownMenu">
                 <a href="#chessArticle" class="chessArticleLinkMain navLinkMain">
                     <img src="<%=require('./assets/menu-right.svg')%>" alt="">
@@ -92,8 +92,45 @@
                     Meine stetige Bereitschaft zum Lernen kommt mir zugute, selbst widrige Hindernisse zu überwinden und neuen Herausforderungen erfolgreich zu begegnen.
                 </p>
             </article>
+            <div class="serviceContainer">
+                <div class="zoomedArticle" id="zoomedArticle">
+                    <img class="zoomedImg" src="" alt="">
+                    <h4 class="zoomedHeadline"></h4>
+                    <p class="zoomedParagraph"></p>
+                </div>
+                <article class="service01 service">
+                    <img class="serviceImg" src="<%=require('./assets/responsive.svg')%>" alt="">
+                    <h4 class="serviceHeadline01 serviceHeadline">Responsive Design</h4>
+                    <p class="serviceParagraph01 serviceParagraph sr-only">Ich stelle auf meinen zu bearbeitenden Seiten eine optimale Darstellung auf allen Geräten sicher. Wodurch eine konsistente Benutzererfahrung erfolgt, ganz gleich, ob diese auf Desktop, Tablet oder Smartphone stattfindet.</p>
+                </article>
+                <article class="service02 service">
+                    <img class="serviceImg" src="<%=require('./assets/accessibility.svg')%>" alt="">
+                    <h4 class="serviceHeadline02 serviceHeadline">Accessibility</h4>
+                    <p class="serviceParagraph02 serviceParagraph sr-only">Inklusion ist fester Bestandteil des Web. Meine Arbeit wird so gestaltet, damit eine uneingeschränkte Bedienung für alle Nutzer gewährleistet wird, einschließlich Menschen mit Behinderungen, durch den Einsatz geeigneter Techniken und Standards.</p>
+                </article>
+                <article class="service03 service">
+                    <img class="serviceImg" src="<%=require('./assets/usability.svg')%>" alt="">
+                    <h4 class="serviceHeadline03 serviceHeadline">Usability</h4>
+                    <p class="serviceParagraph03 serviceParagraph sr-only"> Ich lege Wert auf einfache Navigation und ein konsistentes Layout, um eine positive Benutzererfahrung zu bieten. Die Nutzung des Nutzers steht und fällt mit der Benutzerfreundlichkeit.</p>
+                </article>
+                <article class="service04 service">
+                    <img class="serviceImg" src="<%=require('./assets/performance.svg')%>" alt="">
+                    <h4 class="serviceHeadline04 serviceHeadline">Performance</h4>
+                    <p class="serviceParagraph04 serviceParagraph sr-only">Um die Leistung und Geschwindigkeit zu maximieren, optimiere ich Ladezeiten und stelle sicher, dass kritische Ressourcen effizient genutzt oder auch asynchron geladen werden. Eine Minimierung und Vereinfachung der aufzuwendenden Mittel steht ganz vorn.</p>
+                </article>
+                <article class="service05 service">
+                    <img class="serviceImg" src="<%=require('./assets/seo.svg')%>" alt="">
+                    <h4 class="serviceHeadline05 serviceHeadline">SEO</h4>
+                    <p class="serviceParagraph05 serviceParagraph sr-only">Das Bauen einer Seite erfolgt bei mir unter Berücksichtigung der SEO Optimierungen, die auf einer Seite im Rahmen eines Entwicklers möglich sind, um die Sichtbarkeit, also auch die Referenzierung in Suchmaschinen zu verbessern.</p>
+                </article>
+                <article class="service06 service">
+                    <img class="serviceImg" src="<%=require('./assets/code-quality.svg')%>" alt="">
+                    <h4 class="serviceHeadline06 serviceHeadline">Code Quality</h4>
+                    <p class="serviceParagraph06 serviceParagraph sr-only">Mein Ziel ist stets eine saubere Struktur und Übersichtlichkeit beim Code anzustreben, um zukünftige Wartungen und Skalierungen zu erleichtern, die zusätzlichen Aufwand sparen.</p>
+                </article>
+            </div>
         </section>
-<!-- 
+
         <section class="skillsSection section" id="skillsSection">
             <h3 class="skillsHeadline">Kenntnisse</h3>
             <article class="skill01 skill">
@@ -140,7 +177,7 @@
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi, ipsa. Eveniet ad est harum debitis. Nesciunt, et consequuntur. Distinctio temporibus repellendus laudantium repellat blanditiis veritatis error officiis veniam iure vitae.
                     </div>
                 </article>
-        </section> -->
+        </section>
     </main>
 
     <!-- <footer>

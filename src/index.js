@@ -1,4 +1,4 @@
-import { SideNavbar, MainNavbar } from "./js/main_ui";
+import { SideNavbar, MainNavbar, ServiceBox } from "./js/main_ui";
 import "./style/style.css";
 
 "use strict";
@@ -6,3 +6,4 @@ import "./style/style.css";
 
 MainNavbar.addNavbarEvent();
 SideNavbar.addFollowByScroll();
+ServiceBox.addServiceEvent();

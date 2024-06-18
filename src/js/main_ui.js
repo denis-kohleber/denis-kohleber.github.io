@@ -31,7 +31,7 @@ const SideNavbar = {
     },
     activateDropdown(sectionId) {
         const dropdownMenu = document.getElementById('dropdownMenu');
-        const projectsSection = document.getElementById('projectsSection');
+        const projectsSection = document.getElementById('projectsSectionNav');
 
         if(sectionId === 'chessArticle' || 
         sectionId === 'weatherAppArticle' ||
@@ -83,4 +83,31 @@ const MainNavbar = {
     },
 };
 
-export { SideNavbar, MainNavbar };
+const ServiceBox = {
+    zoomedArticle: document.getElementById('zoomedArticle'),
+    service: document.querySelectorAll('.service, .zoomedArticle'),
+    addServiceEvent() {
+        ServiceBox.service.forEach((service) => {
+            service.addEventListener('click', ServiceBox.showArticle)
+        });
+    },
+    showArticle(event) {
+        const service = event.currentTarget;
+
+        if(service.classList.contains('show')) {
+            return ServiceBox.zoomedArticle.classList.remove('show');
+        }
+        
+        if(!service.classList.contains('show')) {
+            ServiceBox.zoomedArticle.classList.add('show');
+            ServiceBox.updateZoomedArticle(service);
+        } 
+    },
+    updateZoomedArticle(service) {
+        ServiceBox.zoomedArticle.children[0].src = service.children[0].src;
+        ServiceBox.zoomedArticle.children[1].textContent = service.children[1].textContent;
+        ServiceBox.zoomedArticle.children[2].textContent = service.children[2].textContent;
+    },
+};
+
+export { SideNavbar, MainNavbar, ServiceBox };

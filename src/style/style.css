@@ -74,6 +74,8 @@ html, body {
     --headlineMarginBottom: 80px;
     --headlineMarginBottomMediumScreen: 60px;
     --headlineMarginBottomSmallScreen: 40px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -145,16 +147,11 @@ h1, h2, h3, h4 {
     font-size: 1.25rem;
     font-weight: bold;
     color: var(--secondaryColor);
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 12.5px;
-}
-
-.navLink:hover {
-    color: var(--accentColor);
 }
 
 .navLink:after {
@@ -173,10 +170,23 @@ h1, h2, h3, h4 {
     justify-content: center;
     color: var(--accentColor);
 }
-  
-.navLink:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom center;
+
+@media (hover: hover) {
+    .navLink:hover:after {
+        transform: scaleX(1);
+    }
+
+    .navLink:hover {
+        color: var(--accentColor);
+    }
+}
+
+@media (pointer: coarse)  {
+
+    .navLink:active {
+        color: var(--accentColor);
+        background-color: var(--primaryColor3);
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -203,7 +213,7 @@ h1, h2, h3, h4 {
         background-color: var(--primaryColor2);
         transform-origin: top;
         transform: translateY(-100%);
-        transition: transform 0.5s ease-in-out 0.3s;
+        transition: transform 0.5s ease-in-out 0.4s;
     }
     
     .linkContainer.showNav {
@@ -403,7 +413,7 @@ header {
     grid-template: minmax(0, 1000px) auto / auto;
     gap: 30px;
     max-width: 160vh;
-    max-height: 300vw;
+
     align-content: center;
 }
 
@@ -564,6 +574,7 @@ main > * {
     grid-area: 1 / 2 / 2 / 3;
     justify-self: end;
     padding-top: var(--contentSpace);
+    z-index: 1000;
 }
 
 .overviewHeader {
@@ -641,9 +652,8 @@ main > * {
         }
 }
 
-/* || SECTION ABOUT */
-
-
+/* || SECTION ABOUT-ME */
+/* || SECTION ABOUT-ME - Introduction */
 
 .aboutMeSection {
     grid-area: 1 / 1 / 2 / 2;
@@ -655,7 +665,6 @@ main > * {
 .aboutMeSection.bg { 
     box-shadow: 0 0 0 100vmax var(--primaryColor2);
     clip-path: inset(0 -100vmax); 
-    z-index: -1;
 }
 
 .aboutMeHeadline > .box {
@@ -742,6 +751,137 @@ main > * {
         font-size: 1.2rem;
     }
 }
+
+/* || SECTION ABOUT-ME - Service */
+
+.serviceContainer {
+    margin-top: var(--contentSpace);
+    display: grid;
+    grid-template: auto / repeat(3, 1fr);
+    gap: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 500px) {
+    .serviceContainer {
+        grid-template: auto / repeat(2, 1fr);
+    }
+}
+
+.service {
+    height: 160px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border: 5px solid var(--primaryColor);
+    border-radius: min(min(2vw, 2vh), 5px);
+    background-color: var(--primaryColor);
+}
+
+@media (hover: hover) {
+    .service:hover {
+        border-color: var(--accentColor);
+    }
+
+    .service:hover > img {
+        filter: var(--filterYellow);
+        transform: translateY(-10px);
+    }
+    
+    .service:hover > h4 {
+        color: var(--accentColor);
+        transform: translateY(-10px);
+    }
+}
+
+@media (pointer: coarse)  {
+    .service:active {
+        border-color: var(--accentColor);
+    }
+
+    .service:active > img {
+        filter: var(--filterYellow);
+        transform: translateY(-10px);
+    }
+    
+    .service:active > h4 {
+        color: var(--accentColor);
+        transform: translateY(-10px);
+    }
+}
+
+.serviceHeadline {
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.serviceImg {
+    filter: var(--filterWhite);
+    width: 50px;
+    height: 50px;
+    transform-origin: bottom;
+    transition: transform 0.2s;
+}
+
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    }
+
+.zoomedArticle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    border-radius: min(min(2vw, 2vh), 5px);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transform-origin: left;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out 0.2s;
+    z-index: 1;
+}
+
+.zoomedArticle > img {
+    filter: var(--filterYellow);
+    width: 50px;
+    height: 50px;
+}
+
+.zoomedArticle > p {
+    max-width: 600px;
+    text-align: center;
+    color: var(--accentColor);
+    font-size: 1.2rem;
+    padding: 0 20px;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+.zoomedArticle > h4 {
+    color: var(--accentColor);
+    font-size: 1.2rem;
+}
+
+.zoomedArticle.show {
+    transform: translateX(0);
+}
+
+.zoomedArticle.show ~ .service:hover {
+    border-color: var(--primaryColor);
+}
+
 
 /* || SECTION SKILLS */
 
