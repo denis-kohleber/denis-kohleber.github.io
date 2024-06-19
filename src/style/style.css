@@ -68,12 +68,13 @@ html, body {
     --filterYellow: invert(89%) sepia(83%) saturate(497%) hue-rotate(316deg) brightness(98%) contrast(106%);
     --filterSecondaryColor2:  invert(75%) sepia(5%) saturate(10%) hue-rotate(349deg) brightness(88%) contrast(85%);
     --shodowStandart: 8px 8px 8px 0px rgba(0,0,0,0.2);
-    --contentSpace: min(15vh, 130px);
+    --contentSpace: min(20vh, 200px);
     --radiusSmallBox: min(min(1vw, 1vh), 5px);
     --radiusBigBox: 15%;
     --headlineMarginBottom: 80px;
     --headlineMarginBottomMediumScreen: 60px;
     --headlineMarginBottomSmallScreen: 40px;
+    /* Prevent highlighting on Touchscreens */
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
 }
@@ -413,7 +414,6 @@ header {
     grid-template: minmax(0, 1000px) auto / auto;
     gap: 30px;
     max-width: 160vh;
-
     align-content: center;
 }
 
@@ -421,7 +421,7 @@ header {
     display: grid;
     grid-template: auto auto auto / auto 1fr;
     z-index: 1;
-    padding-bottom: var(--contentSpace);
+    padding-bottom: min(15vh, 130px);
     gap: min(min(2vw, 2vh), 15px);
 }
 
@@ -465,7 +465,7 @@ h2 {
 
 .photoContainer {
     justify-self: end;
-    padding-top: var(--contentSpace);
+    padding-top: min(15vh, 130px);
     display: grid;
     grid-template: 85% 15% / 1fr auto;
     z-index: 1;
@@ -535,6 +535,17 @@ h2 {
 h3 {
     font-size: 4rem;
     margin-bottom: var(--headlineMarginBottom);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.underline {
+    width: 130px;
+    height: 10px;
+    margin-top: 30px;
+    border-radius: var(--radiusSmallBox);
+    background-color: var(--accentColor);
 }
 
 main {
@@ -628,7 +639,7 @@ main > * {
     animation: fade-out 0.3s forwards;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
     .navMain {
         display: none;
     }
@@ -665,6 +676,10 @@ main > * {
 .aboutMeSection.bg { 
     box-shadow: 0 0 0 100vmax var(--primaryColor2);
     clip-path: inset(0 -100vmax); 
+}
+
+.aboutMeHeadline {
+    display: block;
 }
 
 .aboutMeHeadline > .box {
@@ -882,7 +897,6 @@ main > * {
     border-color: var(--primaryColor);
 }
 
-
 /* || SECTION SKILLS */
 
 .skillsSection {
@@ -890,7 +904,110 @@ main > * {
     grid-area: 2 / 1 / 3 / 2;
 }
 
-.skillsHeadline {
+.skillboxContainer {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.skillbox {
+    background-color: var(--primaryColor2);
+    border-radius: min(min(2vw, 2vh), 5px);
+    padding: 40px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 40px;
+    flex: 1;
+}
+
+.skillboxIcon {
+    width: 50px;
+    height: 50px;
+}
+
+.skillboxHeadline {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: -15px;
+}
+
+.partingLine {
+    min-height: 5px;
+    height: 5px;
+    background-color: var(--secondaryColor);
+    width: 100%;
+    border-radius: 5px;
+}
+
+.skillsContainer {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    gap: 50px;
+    height: 100%;
+    padding: 30px 0;
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex: 1;
+}
+
+.skillIcon {
+    width: 35px;
+    height: 35px;
+}
+
+.skillParagraph {
+    font-size: 1.2rem;
+    font-family: 'Russo One', 'Roboto', sans-serif;
+    color: var(--accentColor);
+}
+
+.skillboxFooter {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.boxContainerSkillSection {
+    position: relative;
+    height: 60px;
+    min-width: 100px;
+}
+
+.boxContainerSkillSection > * {
+    background-color: var(--secondaryColor);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radiusSmallBox);
+    position: absolute;
+    box-shadow: var(--shodowStandart);
+}
+
+.boxContainerSkillSection > :nth-child(1) {
+    top: 0;
+    right: 0;
+}
+
+.boxContainerSkillSection > :nth-child(2) {
+    top: 0;
+    left: 0;
+    
+}
+
+.boxContainerSkillSection > :nth-child(3) {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    background-color: var(--accentColor);
+    
 }
 
 /* || SECTION PROJECTS */
@@ -898,6 +1015,12 @@ main > * {
 .projectsSection {
     grid-area: 3 / 1 / 4 / 2;
     height: 100vh;
+    background-color: var(--primaryColor2);
+}
+
+.projectsSection.bg {
+    box-shadow: 0 0 0 100vmax var(--primaryColor2);
+    clip-path: inset(0 -100vmax); 
 }
 
 /* || SECTION PROJECTS - Chess */
