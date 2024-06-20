@@ -67,7 +67,7 @@ html, body {
     --filterWhite: invert(100%) sepia(0%) saturate(7500%) hue-rotate(43deg) brightness(102%) contrast(115%);
     --filterYellow: invert(89%) sepia(83%) saturate(497%) hue-rotate(316deg) brightness(98%) contrast(106%);
     --filterSecondaryColor2:  invert(75%) sepia(5%) saturate(10%) hue-rotate(349deg) brightness(88%) contrast(85%);
-    --shodowStandart: 8px 8px 8px 0px rgba(0,0,0,0.2);
+    --shodowStandart: 4px 4px 8px 0px rgba(0,0,0,0.4);
     --contentSpace: min(20vh, 200px);
     --radiusSmallBox: min(min(1vw, 1vh), 5px);
     --radiusBigBox: 15%;
@@ -77,6 +77,26 @@ html, body {
     /* Prevent highlighting on Touchscreens */
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
+}
+
+/* || SKELETT - Scrollbar */
+
+::-webkit-scrollbar {
+    width: 7px;
+    border-radius: var(--radiusSmallBox);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primaryColor3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondaryColor);
+    border-radius: 2px;
+}
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accentColor);
 }
 
 body {
@@ -1239,14 +1259,14 @@ footer {
     display: flex;
     flex-flow: column;
     justify-content: center;
-    align-items: left;
+    align-items: end;
     gap: 20px;
 }
 
 .boxContainerFooter {
     display: flex;
     gap: 20px;
-    margin-left: 80px;
+    margin-right: 160px;
 }
 
 .boxContainerFooter > * {
@@ -1262,11 +1282,10 @@ footer {
 }
 
 .copyright {
-    margin-left: 80px;
+    margin-right: 80px;
     width: fit-content;
     color: var(--secondaryColor2);
     white-space: nowrap;
-    margin-right: 50px;
     line-height: 20px;
     text-align: center;
 }
