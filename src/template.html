@@ -61,13 +61,13 @@
             <a href="#skillsSection" class="skillsSectionLinkMain navLinkMain">Kenntnisse</a>
             <a href="#projectsSection" id="projectsSectionNav" class="projectsSectionLinkMain navLinkMain">Projekte</a>
             <div class="dropdownNavMain" id="dropdownMenu">
-                <a href="#chessArticle" class="chessArticleLinkMain navLinkMain">
-                    <img src="<%=require('./assets/menu-right.svg')%>" alt="">
-                    <p>Schach</p>
-                </a>
                 <a href="#weatherAppArticle" class="weatherAppArticleLinkMain navLinkMain">
                     <img src="<%=require('./assets/menu-right.svg')%>" alt="">
                     <p>Wetter App</p>
+                </a>
+                <a href="#chessArticle" class="chessArticleLinkMain navLinkMain">
+                    <img src="<%=require('./assets/menu-right.svg')%>" alt="">
+                    <p>Schach</p>
                 </a>
             </div>
             <a href="#contactSection" class="contactSectionLinkMain navLinkMain">Kontakt</a>
@@ -135,7 +135,7 @@
                 <div class="underline"></div>
             </h3>
             <div class="skillboxContainer">
-                <article class="skillbox skillbox01">
+                <article class="skillbox skillbox01" id="weatherAppArticle">
                     <img src="<%=require('./assets/languages.svg')%>" alt="" class="skillboxIcon skillboxIcon01">
                     <h4 class="skillboxHeadline skillboxHeadline01">Sprachen /<br>Frameworks</h4>
                     <div class="partingLine"></div>
@@ -167,7 +167,8 @@
                         <div class="partingLine"></div>
                     </div>
                 </article>
-                <article class="skillbox skillbox02">
+
+                <article class="skillbox skillbox02" id="chessArticle">
                     <img src="<%=require('./assets/technologien.svg')%>" alt="" class="skillboxIcon skillboxIcon02">
                     <h4 class="skillboxHeadline skillboxHeadline02">Sonstige<br>Technologien</h4>
                     <div class="partingLine"></div>
@@ -202,15 +203,49 @@
             <h3 class="projectsHeadline">Projekte
                 <div class="underline"></div>
             </h3>
-            <article class="project01 section" id="chessArticle">
-                <img src="" alt="" class="projectImg01 projectImg">
-                <h4 class="projectHeadline01 projectHeadline">Schach</h4>
-                <p class="projectText01 projectText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis voluptates vel accusamus perspiciatis autem similique dolores, eaque maiores pariatur. Velit, soluta! Accusamus inventore perferendis quam optio quo dolorum veniam quaerat.</p>
+
+            <article class="project">
+                <div class="projectImgContainer projectImgContainer01">
+                    <img src="<%=require('./assets/dummy.png')%>" alt="" class="projectImg01 projectImg">
+                    <!-- <img src="<%=require('./assets/dummy.png')%>" alt="" class="projectImg02 projectImg"> -->
+                </div>
+                <div class="projectDescription projectDescription01">
+                    <h4 class="projectHeadline projectHeadline01">Wetter App</h4>
+                    <p class="projectCreationDate projectCreationDate01">10.04.2024</p>
+                    <p class="projectParagraph projectParagraph01">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In labore ea quam laborum harum illum amet enim quibusdam eius quaerat illo sint, voluptatum, reiciendis voluptatibus hic ad aut atque nulla?</p>
+                </div>
+                <div class="projectLinkContainer01 projectLinkContainer">
+                    <button class="projectExecutionBtn projectExecutionBtn01">Ausführen</button>
+                    <a class="projectGitLink projectGitLink01" href="">
+                        <img src="<%=require('./assets/github.svg')%>" alt="">
+                    </a>
+                </div>
             </article>
-            <article class="project02 section" id="weatherAppArticle">
-                <img src="" alt="" class="projectImg02 projectImg">
-                <h4 class="projectHeadline02 projectHeadline">Wetter App</h4>
-                <p class="projectText02 projectText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora aliquid rem aut sequi quia. Veniam inventore at et, natus doloremque omnis obcaecati enim atque eaque ex maiores, asperiores hic quos?</p>
+
+            <div class="boxContainerProjectSection animate" id="flower">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+
+            <article class="project">
+                <div class="projectImgContainer projectImgContainer02">
+                    <img src="<%=require('./assets/dummy.png')%>" alt="" class="projectImg03 projectImg">
+                    <!-- <img src="<%=require('./assets/dummy.png')%>" alt="" class="projectImg04 projectImg"> -->
+                </div>
+                <div class="projectDescription projectDescription02">
+                    <h4 class="projectHeadline projectHeadline02">Schach</h4>
+                    <p class="projectCreationDate projectCreationDate02">10.04.2024</p>
+                    <p class="projectParagraph projectParagraph02">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur architecto itaque expedita iste neque dicta esse illo illum. Sed error iusto repudiandae! Nesciunt fuga aut eos natus inventore ab expedita.</p>
+                </div>
+                <div class="projectLinkContainer02 projectLinkContainer">
+                    <button class="projectExecutionBtn projectExecutionBtn02">Ausführen</button>
+                    <a class="projectGitLink projectGitLink02" href="">
+                        <img  src="<%=require('./assets/github.svg')%>" alt="">
+                    </a>
+                </div>
             </article>
         </section>
 

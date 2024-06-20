@@ -97,7 +97,7 @@ const ServiceBox = {
         if(service.classList.contains('show')) {
             return ServiceBox.zoomedArticle.classList.remove('show');
         }
-        
+
         if(!service.classList.contains('show')) {
             ServiceBox.zoomedArticle.classList.add('show');
             ServiceBox.updateZoomedArticle(service);
@@ -110,4 +110,24 @@ const ServiceBox = {
     },
 };
 
-export { SideNavbar, MainNavbar, ServiceBox };
+const Flower = {
+    flower: document.getElementById('flower'),
+    startAnimation() {
+        let isScrolling;
+        
+        document.addEventListener('scroll', () => {
+            Flower.flower.style.animationPlayState = 'running';
+          
+            // Remove timeout after new scroll
+            window.clearTimeout(isScrolling);
+
+            // Set timeout to run after scrolling ends
+            isScrolling = setTimeout(() => {
+              // Pause the animation when scrolling stops 
+            Flower.flower.style.animationPlayState = 'paused';
+            }, 100);
+        });
+    },
+};
+
+export { SideNavbar, MainNavbar, ServiceBox, Flower };
