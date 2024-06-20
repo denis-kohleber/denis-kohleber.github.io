@@ -552,6 +552,7 @@ main {
     display: grid;
     grid-template: auto auto auto auto / auto ;
     column-gap: 80px;
+    position: relative;
 }
 
 main > * {
@@ -582,15 +583,17 @@ main > * {
     position: sticky;
     top: 0px;
     padding: 0;
-    grid-area: 1 / 2 / 2 / 3;
+    grid-area: 1 / 2 / -1 / 3;
     justify-self: end;
     padding-top: var(--contentSpace);
     z-index: 1000;
+    align-self: start
 }
 
 .overviewHeader {
     font-size: 24px;
     margin-bottom: 10px;
+    margin-right: auto;
 }
 
 .weatherAppArticleLinkMain {
@@ -1098,7 +1101,7 @@ main > * {
 } 
 
 .boxContainerProjectSection {
-    margin: 130px auto;
+    margin: 160px auto;
     position: relative;
     width: clamp(100px, 10vw, 150px);;
     height: clamp(100px, 10vw, 150px);
@@ -1158,37 +1161,70 @@ main > * {
     margin: auto;
 }
 
-/* .boxContainer {
-    position: relative;
-    width: clamp(60px, 6vw, 90px);;
-    height: clamp(160px, 16vw, 240px);
-    min-width: clamp(60px, 6vw, 90px);
-}
-
-.boxContainer > * {
-    width: clamp(40px, 4vw, 60px);
-    height: clamp(40px, 4vw, 60px);
-    border-radius: 20%;
-    box-shadow: var(--shodowStandart);
-    position: absolute;
-}
-
-.boxContainer > :nth-child(1) {
-    background-color: var(--accentColor);
-    top: 18.75%;
-    left: 0;
-} */
-
-
-/* || SECTION PROJECTS - Chess */
-
-.projectsSection > article {
-}
-
 /* || SECTION CONTACT */
 
 .contactSection {
     grid-area: 4 / 1 / 5 / 2;
+}
+
+.contact {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    max-width: fit-content;
+    margin: 0 auto
+}
+
+.contact > p {
+    font-weight: bold;
+    font-size: clamp(0.8rem, 4vw, 1rem);;
+}
+
+.contact > .email {
+    font-size: clamp(1rem, 5vw, 2rem);
+    font-weight: normal;
+    font-family: 'Russo One', 'Roboto', sans-serif;
+    margin-top: 10px;
+}
+
+.orContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 30px;
+}
+
+.orContainer > .partingLine {
+    background-color: var(--accentColor);
+}
+
+.orParagraph {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    font-weight: bold;
+    letter-spacing: 8px;
+    display: flex;
+    margin: 50px 0;
+    margin-right: -8px;
+}
+
+.contactLinkContainer {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.contactLinkIcon {
+    width: 60px;
+    height: 60px;
+    filter: var(--filterYellow);
+    transition: transform 0.1s linear;
+}
+
+.contactLinkIcon:hover {
+    filter: var(--filterWhite);
+    transform: scale(1.2);
 }
 
 

@@ -135,7 +135,7 @@
                 <div class="underline"></div>
             </h3>
             <div class="skillboxContainer">
-                <article class="skillbox skillbox01" id="weatherAppArticle">
+                <article class="skillbox skillbox01">
                     <img src="<%=require('./assets/languages.svg')%>" alt="" class="skillboxIcon skillboxIcon01">
                     <h4 class="skillboxHeadline skillboxHeadline01">Sprachen /<br>Frameworks</h4>
                     <div class="partingLine"></div>
@@ -168,7 +168,7 @@
                     </div>
                 </article>
 
-                <article class="skillbox skillbox02" id="chessArticle">
+                <article class="skillbox skillbox02">
                     <img src="<%=require('./assets/technologien.svg')%>" alt="" class="skillboxIcon skillboxIcon02">
                     <h4 class="skillboxHeadline skillboxHeadline02">Sonstige<br>Technologien</h4>
                     <div class="partingLine"></div>
@@ -204,9 +204,9 @@
                 <div class="underline"></div>
             </h3>
 
-            <article class="project">
+            <article class="project section" id="weatherAppArticle">
                 <div class="projectImgContainer projectImgContainer01">
-                    <img src="<%=require('./assets/dummy.png')%>" alt="" class="projectImg01 projectImg">
+                    <!-- <img src="<%=require('./assets/dummy.png')%>" alt="" class="projectImg01 projectImg"> -->
                     <!-- <img src="<%=require('./assets/dummy.png')%>" alt="" class="projectImg02 projectImg"> -->
                 </div>
                 <div class="projectDescription projectDescription01">
@@ -230,9 +230,9 @@
                 <div class="box"></div>
             </div>
 
-            <article class="project">
+            <article class="project section" id="chessArticle">
                 <div class="projectImgContainer projectImgContainer02">
-                    <img src="<%=require('./assets/dummy.png')%>" alt="" class="projectImg03 projectImg">
+                    <!-- <img src="<%=require('./assets/dummy.png')%>" alt="" class="projectImg03 projectImg"> -->
                     <!-- <img src="<%=require('./assets/dummy.png')%>" alt="" class="projectImg04 projectImg"> -->
                 </div>
                 <div class="projectDescription projectDescription02">
@@ -253,16 +253,28 @@
             <h3 class="contactHeadline">Kontakt
                 <div class="underline"></div>
             </h3>
-                <article class="contact">
-                    <div class="placeholder">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur tempora omnis repellendus repellat eveniet dignissimos quia itaque enim, quae, ducimus voluptas error magni! Est reprehenderit laudantium, dignissimos quisquam provident incidunt!
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium tempore placeat eveniet voluptatum est, dolorum quidem explicabo voluptatem ullam doloribus quas. Natus nostrum et a atque quibusdam esse unde repellendus!
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi, ipsa. Eveniet ad est harum debitis. Nesciunt, et consequuntur. Distinctio temporibus repellendus laudantium repellat blanditiis veritatis error officiis veniam iure vitae.
-                    </div>
-                </article>
+            <article class="contact">
+                <p>Schreiben Sie mir eine E-Mail an:</p>
+                <p class="email">denis.kohleber.contact@gmail.com</p>
+                <div class="orContainer">
+                    <div class="partingLine"></div>
+                    <p class="orParagraph">ODER</p>
+                    <div class="partingLine"></div>
+                </div>
+                <p>Erreichen Sie mich über die sozialen Netzwerke:</p>
+                <div class="contactLinkContainer">
+                    <a href="" class="contactGitLink contactLink">
+                        <img class="contactLinkIcon" src="<%=require('./assets/github.svg')%>" alt="">
+                    </a>
+                    <a href="" class="contactLinkedInLink contactLink">
+                        <img class="contactLinkIcon" src="<%=require('./assets/linkedin.svg')%>" alt="">
+                    </a>
+                </div>
+            </article>
         </section>
     </main>
 
-    <!-- <footer>
+    <footer>
         <p class="copyright">© Denis Kohleber 2024</p>
         <div class="linkContainerFooter">
             <a class="linkedinLinkContainer" href="">
@@ -274,6 +286,6 @@
                 <img class="gitIcon" src="<%=require('./assets/github.svg')%>" alt="github">
             </a>
         </div>
-    </footer> -->
+    </footer>
 </body>
 </html>
