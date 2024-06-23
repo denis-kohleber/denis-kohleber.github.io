@@ -11,7 +11,7 @@ const SideNavbar = {
                 const currentPos = window.scrollY; 
           
                 sections.forEach(function (section) { 
-                    const sectionTop = section.offsetTop - 300; 
+                    const sectionTop = section.offsetTop + 500; 
                     const sectionHeight = section.offsetHeight; 
                     const sectionId = section.id; 
                     
@@ -114,7 +114,7 @@ const Flower = {
     flower: document.getElementById('flower'),
     startAnimation() {
         let isScrolling;
-        
+
         document.addEventListener('scroll', () => {
             Flower.flower.style.animationPlayState = 'running';
           
@@ -123,11 +123,60 @@ const Flower = {
 
             // Set timeout to run after scrolling ends
             isScrolling = setTimeout(() => {
-              // Pause the animation when scrolling stops 
+                
+            // Pause the animation when scrolling stops 
             Flower.flower.style.animationPlayState = 'paused';
             }, 100);
         });
     },
 };
 
-export { SideNavbar, MainNavbar, ServiceBox, Flower };
+const DialogWindow = {
+    body: document.getElementById('body'),
+    dialog: document.getElementById('projectDialog'),
+    startBtn: document.querySelectorAll('.projectExecutionBtn'),
+    addStartingEvent() {
+        DialogWindow.startBtn.forEach((startBtn) => {
+            startBtn.addEventListener('click', DialogWindow.openModal);
+        });
+    },
+    openModal() {
+        DialogWindow.dialog.showModal();
+
+        DialogWindow.dialog.innerHTML = ''; // Clean up the dialog
+        
+        DialogWindow.body.classList.add('hideOverflow');
+
+        DialogWindow.createCloseBtn();
+
+        DialogWindow.createBackground();
+
+        // Function to start Project
+    },
+    createCloseBtn() {
+        const closeBtn = document.createElement('button');
+        closeBtn.classList.add('projectCloseBtn');
+        closeBtn.style.backgroundImage = "url('close.svg')";
+        DialogWindow.dialog.appendChild(closeBtn);
+
+        closeBtn.addEventListener('click', DialogWindow.closeModal);
+    },
+    closeModal() {
+        DialogWindow.body.classList.remove('hideOverflow');
+        DialogWindow.dialog.close();
+    },
+    createBackground() {
+        const boxesDiv = document.createElement('div');
+        boxesDiv.classList.add('boxes');
+
+        for (let i = 0; i < 18; i++) {
+            let boxDiv = document.createElement('div');
+            boxDiv.classList.add('box');
+            boxesDiv.appendChild(boxDiv);
+        }
+
+        DialogWindow.dialog.appendChild(boxesDiv);
+    },
+}
+
+export { SideNavbar, MainNavbar, ServiceBox, Flower, DialogWindow };
