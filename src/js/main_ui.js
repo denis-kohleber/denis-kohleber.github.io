@@ -1,4 +1,7 @@
+import { ChessSetup } from "./chess_setup";
+
 "use strict";
+
 const SideNavbar = {
     addFollowByScroll() {
         document.addEventListener('DOMContentLoaded', function () { 
@@ -123,7 +126,7 @@ const Flower = {
 
             // Set timeout to run after scrolling ends
             isScrolling = setTimeout(() => {
-                
+
             // Pause the animation when scrolling stops 
             Flower.flower.style.animationPlayState = 'paused';
             }, 100);
@@ -140,18 +143,21 @@ const DialogWindow = {
             startBtn.addEventListener('click', DialogWindow.openModal);
         });
     },
-    openModal() {
+    openModal(event) {
+        const startBtn = event.currentTarget;
+
         DialogWindow.dialog.showModal();
 
         DialogWindow.dialog.innerHTML = ''; // Clean up the dialog
         
-        DialogWindow.body.classList.add('hideOverflow');
+        DialogWindow.body.classList.add('hideOverflow'); // Blocking the scrolling
 
         DialogWindow.createCloseBtn();
 
         DialogWindow.createBackground();
 
-        // Function to start Project
+        // if(startBtn.getAttribute('data-value') === 'weatherApp') return WeatherApp.startSetup();
+        if(startBtn.getAttribute('data-value') === 'chess') return ChessSetup.createChessSetup();
     },
     createCloseBtn() {
         const closeBtn = document.createElement('button');
