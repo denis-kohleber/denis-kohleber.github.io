@@ -67,7 +67,7 @@ html, body {
     --filterWhite: invert(100%) sepia(0%) saturate(7500%) hue-rotate(43deg) brightness(102%) contrast(115%);
     --filterYellow: invert(89%) sepia(83%) saturate(497%) hue-rotate(316deg) brightness(98%) contrast(106%);
     --filterSecondaryColor2:  invert(75%) sepia(5%) saturate(10%) hue-rotate(349deg) brightness(88%) contrast(85%);
-    --shodowStandart: 4px 4px 8px 0px rgba(0,0,0,0.4);
+    --shodowStandart: 4px 4px 5px 0px rgba(0,0,0,0.8);
     --contentSpace: min(20vh, 200px);
     --radiusSmallBox: min(min(1vw, 1vh), 5px);
     --radiusBigBox: 15%;
@@ -1263,6 +1263,7 @@ body.hideOverflow {
     display: flex;
     flex-flow: column;
     justify-content: space-evenly;
+    box-shadow: var(--shodowStandart);
 }
 
 .headlineContainer {
@@ -1365,6 +1366,11 @@ body.hideOverflow {
 
 @media  screen and (max-width: 450px),
         screen and (max-height: 450px) {
+    .chessSetup {
+        height: 100vw;
+        width: 100vw;
+    }
+        
     .chessHeadline {
         font-size: 4.5rem;
     }
@@ -1391,9 +1397,98 @@ body.hideOverflow {
     }
 }
 
+@media screen and (max-height: 450px) {
+    .chessSetup {
+        height: 100vh;
+        width: 100vh;
+    }
+}
+
 /* || SECTION Projects - Dialog Chess Game */
 
+.boardInnerBorder {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accentColor);
+    border: 5px solid var(--primaryColor);
+    box-shadow: 0px 0px 10px 2px #000000;
+    position: relative;
+}
 
+.mainBoard {
+    position: absolute;
+    top: clamp(4px, 1vw, 6px);
+    right: clamp(4px, 1vw, 6px);
+    left: clamp(4px, 1vw, 6px);
+    bottom: clamp(4px, 1vw, 6px);
+    display: grid;
+    grid-template: repeat(8, 1fr) / repeat(8, 1fr);
+    border: 5px solid var(--primaryColor);
+    box-shadow: 0px 0px 10px 2px #000000;
+}
+
+.fieldCluster.white {
+    background-color: var(--secondaryColor);
+}
+
+.fieldCluster.black {
+    background-color: var(--primaryColor2);
+}
+
+.fieldCluster {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fieldCluster > img {
+    width: 80%;
+    height: 80%;
+    filter: drop-shadow(0px 0px 1.25px rgb(255, 255, 255));
+    transition: width 0.1s linear, height 0.1s linear;
+}
+
+.fieldCluster > img:hover {
+    background-color: var(--accentColor);
+    width: 100%;
+    height: 100%;
+}
+
+.fieldCluster.white.highlighted {
+    background-color: #fff0c1;
+}
+
+.fieldCluster.black.highlighted {
+    background-color: #e7d8aa;
+}
+
+.fieldCluster.white.highlighted:hover {
+    background-color: var(--mainColor);
+}
+
+.fieldCluster.black.highlighted:hover {
+    background-color: var(--mainColor);
+}
+
+@media  screen and (max-width: 450px),
+        screen and (max-height: 450px) {
+    .boardInnerBorder {
+        position: absolute;
+        width: auto;
+        height: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .fieldCluster > img {
+        width: 90%;
+        height: 90%;
+    }
+}
 
 /* || SECTION Projects - Dialog Weather App */
 

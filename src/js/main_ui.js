@@ -148,7 +148,7 @@ const DialogWindow = {
 
         DialogWindow.dialog.showModal();
 
-        DialogWindow.dialog.innerHTML = ''; // Clean up the dialog
+        // DialogWindow.dialog.innerHTML = ''; // Clean up the dialog  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         
         DialogWindow.body.classList.add('hideOverflow'); // Blocking the scrolling
 

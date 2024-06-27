@@ -10,18 +10,6 @@ ServiceBox.addServiceEvent();
 Flower.startAnimation();
 DialogWindow.addStartingEvent();
 
-// const startChessGameBtn = document.getElementById('startChessGameBtn');
-// const botBtn = document.querySelector('.botBtn').addEventListener('click', () => {
-//     if(startChessGameBtn.style.maxHeight) {
-//         startChessGameBtn.style.maxHeight = null;
-//         startChessGameBtn.style.padding = '0';
-//     } else {
-
-//         console.log(startChessGameBtn.style.padding);
-//     }
-// })
-
-
 
     
     
