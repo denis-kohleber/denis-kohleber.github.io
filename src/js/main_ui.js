@@ -1,5 +1,3 @@
-import { ChessSetup } from "./chess_setup";
-
 "use strict";
 
 const SideNavbar = {
@@ -79,10 +77,12 @@ const MainNavbar = {
         MainNavbar.changeImgMenuIcon();
     },
     changeImgCloseIcon() {
-        MainNavbar.menuBtn.style.backgroundImage = "url('close.svg')";
+        const closeIcon = require('../assets/close.svg');
+        MainNavbar.menuBtn.style.backgroundImage = `url(${closeIcon})`;
     },
     changeImgMenuIcon() {
-        MainNavbar.menuBtn.style.backgroundImage = "url('menu.svg')";
+        const menuIcon = require('../assets/menu.svg');
+        MainNavbar.menuBtn.style.backgroundImage = `url(${menuIcon})`;
     },
 };
 
@@ -144,31 +144,45 @@ const DialogWindow = {
         });
     },
     openModal(event) {
+
         const startBtn = event.currentTarget;
 
+        if(startBtn.getAttribute('data-value') === 'chess') {
+            import('./chess/chess_setup.js')
+                .then(DialogWindow.addModalProperties())
+                .then(module => {
+                    module.ChessSetup.createChessSetup();
+                })
+                .catch(err => {
+                    console.error('Fehler beim Laden des Moduls:', err);
+                });
+        };
+
+        // if(startBtn.getAttribute('data-value') === 'weatherApp') return WeatherApp.startSetup();
+    },
+    addModalProperties() {
         DialogWindow.dialog.showModal();
 
-        // DialogWindow.dialog.innerHTML = ''; // Clean up the dialog  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        DialogWindow.dialog.innerHTML = ''; // Clean up the dialog
         
         DialogWindow.body.classList.add('hideOverflow'); // Blocking the scrolling
 
         DialogWindow.createCloseBtn();
 
         DialogWindow.createBackground();
-
-        // if(startBtn.getAttribute('data-value') === 'weatherApp') return WeatherApp.startSetup();
-        if(startBtn.getAttribute('data-value') === 'chess') return ChessSetup.createChessSetup();
     },
     createCloseBtn() {
         const closeBtn = document.createElement('button');
         closeBtn.classList.add('projectCloseBtn');
-        closeBtn.style.backgroundImage = "url('close.svg')";
+        const closeIcon = require('../assets/close.svg');
+        closeBtn.style.backgroundImage = `url(${closeIcon})`;
         DialogWindow.dialog.appendChild(closeBtn);
 
         closeBtn.addEventListener('click', DialogWindow.closeModal);
     },
     closeModal() {
         DialogWindow.body.classList.remove('hideOverflow');
+        DialogWindow.dialog.innerHTML = '';
         DialogWindow.dialog.close();
     },
     createBackground() {

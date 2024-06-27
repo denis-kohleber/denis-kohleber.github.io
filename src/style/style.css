@@ -67,7 +67,7 @@ html, body {
     --filterWhite: invert(100%) sepia(0%) saturate(7500%) hue-rotate(43deg) brightness(102%) contrast(115%);
     --filterYellow: invert(89%) sepia(83%) saturate(497%) hue-rotate(316deg) brightness(98%) contrast(106%);
     --filterSecondaryColor2:  invert(75%) sepia(5%) saturate(10%) hue-rotate(349deg) brightness(88%) contrast(85%);
-    --shodowStandart: 4px 4px 5px 0px rgba(0,0,0,0.8);
+    --shodowStandart: 4px 4px 5px 0px rgba(0,0,0,0.4);
     --contentSpace: min(20vh, 200px);
     --radiusSmallBox: min(min(1vw, 1vh), 5px);
     --radiusBigBox: 15%;
@@ -1369,6 +1369,7 @@ body.hideOverflow {
     .chessSetup {
         height: 100vw;
         width: 100vw;
+        border-radius: 0;
     }
         
     .chessHeadline {
@@ -1442,36 +1443,110 @@ body.hideOverflow {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 5px;
+    transition: padding 0.1s linear;
 }
 
 .fieldCluster > img {
-    width: 80%;
-    height: 80%;
-    filter: drop-shadow(0px 0px 1.25px rgb(255, 255, 255));
-    transition: width 0.1s linear, height 0.1s linear;
-}
-
-.fieldCluster > img:hover {
-    background-color: var(--accentColor);
     width: 100%;
     height: 100%;
+    opacity: 1;
+    filter: drop-shadow(0px 0px 1.25px rgb(255, 255, 255));
+    animation: fadeInChessPiece 0.5s linear;
+}
+
+@keyframes fadeInChessPiece {
+    0% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    75% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.fieldCluster:hover {
+    background-color: var(--accentColor);
+    padding: 0;
 }
 
 .fieldCluster.white.highlighted {
-    background-color: #fff0c1;
+    background-color: #ffe2a0;
 }
 
 .fieldCluster.black.highlighted {
-    background-color: #e7d8aa;
+    background-color: #e2c98d;
 }
 
-.fieldCluster.white.highlighted:hover {
-    background-color: var(--mainColor);
+.fieldCluster.white.highlighted:hover, 
+.fieldCluster.black.highlighted:hover  {
+    background-color: var(--accentColor);
 }
 
-.fieldCluster.black.highlighted:hover {
-    background-color: var(--mainColor);
+.fieldCluster.black.highlightedAi, 
+.fieldCluster.white.highlightedAi {
+    background-color: var(--accentColor);
 }
+
+.chessPopUp {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: -1;
+    width: 200px;
+    height: 100px;
+    background-color: var(--primaryColor);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--accentColor);
+    transition: opacity 0.2s linear;
+    border: 4px solid var(--accentColor);
+}
+
+.chessPopUp.show {
+    z-index: 1;
+    animation: chessPopUp 1.2s linear forwards;
+}
+
+.chessPopUp.showWin {
+    z-index: 1;
+    animation: chessPopUp 5s linear forwards;
+    width: 300px;
+}
+
+@keyframes chessPopUp {
+    0% {
+        transform: translateY(-65vh);
+    }
+    20% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-65vh);
+    }
+}
+
 
 @media  screen and (max-width: 450px),
         screen and (max-height: 450px) {
@@ -1484,9 +1559,8 @@ body.hideOverflow {
         left: 0;
         right: 0;
     }
-    .fieldCluster > img {
-        width: 90%;
-        height: 90%;
+    .fieldCluster {
+        padding: 1px;
     }
 }
 
