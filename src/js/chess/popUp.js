@@ -9,8 +9,8 @@ const PopUp = {
         this.showAndHide();
     },
     showAndHide() {
-        if (this.popUp.classList.contains('show') ||
-        this.popUp.classList.contains('showWin')) return;
+        if  (this.popUp.classList.contains('show') &&
+            !this.popUp.innerText.includes('Congratulation')) return;
 
         if (this.popUp.innerText.includes('Congratulation')) {
             this.popUp.classList.add('showWin');
