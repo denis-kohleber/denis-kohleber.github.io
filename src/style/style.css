@@ -67,13 +67,14 @@ html, body {
     --filterWhite: invert(100%) sepia(0%) saturate(7500%) hue-rotate(43deg) brightness(102%) contrast(115%);
     --filterYellow: invert(89%) sepia(83%) saturate(497%) hue-rotate(316deg) brightness(98%) contrast(106%);
     --filterSecondaryColor2:  invert(75%) sepia(5%) saturate(10%) hue-rotate(349deg) brightness(88%) contrast(85%);
-    --shodowStandart: 4px 4px 5px 0px rgba(0,0,0,0.4);
-    --contentSpace: min(20vh, 200px);
+    --shodowStandart: 4px 4px 3px 0px rgba(0, 0, 0, 0.4);
+    --shadowAround: 0 0 5px 0px rgba(0, 0, 0, 0.4);
+    --contentSpace: min(15vh, 200px);
     --radiusSmallBox: min(min(1vw, 1vh), 5px);
     --radiusBigBox: 15%;
     --headlineMarginBottom: 80px;
     --headlineMarginBottomMediumScreen: 60px;
-    --headlineMarginBottomSmallScreen: 40px;
+    --headlineMarginBottomSmallScreen: 60px;
     /* Prevent highlighting on Touchscreens */
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
@@ -131,6 +132,7 @@ h1, h2, h3, h4 {
     position: absolute;
     height: 70px;
     z-index: 2;
+    padding-right: 14px;
     align-items: center;
     justify-content: start;
 }
@@ -550,16 +552,17 @@ h2 {
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 550px) {
     .photoContainer {
         justify-self: center;
+        max-height: 400px;
     }
 }
 
 /* || MAIN */
 
 h3 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin-bottom: var(--headlineMarginBottom);
     display: flex;
     flex-flow: column;
@@ -569,8 +572,8 @@ h3 {
 .underline {
     width: 130px;
     height: 10px;
-    margin-top: 30px;
-    border-radius: var(--radiusSmallBox);
+    margin-top: min(30px, 3vh);
+    border-radius: 3px;
     background-color: var(--accentColor);
 }
 
@@ -940,13 +943,13 @@ main > * {
     display: flex;
     flex-flow: wrap;
     justify-content: space-between;
-    gap: 30px;
+    gap: 80px 30px;
 }
 
 .skillbox {
     background-color: var(--primaryColor2);
-    border-radius: min(min(2vw, 2vh), 5px);
-    padding: 40px;
+    border-radius: 25px;
+    padding: min(40px, 8vw);
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -956,7 +959,6 @@ main > * {
 
 .skillboxIcon {
     width: 50px;
-    height: 50px;
 }
 
 .skillboxHeadline {
@@ -998,7 +1000,6 @@ main > * {
 
 .skillIcon {
     width: 35px;
-    height: 35px;
 }
 
 .skillParagraph {
@@ -1048,6 +1049,20 @@ main > * {
     
 }
 
+@media screen and (max-width: 450px) {
+    .skillboxIcon {
+        width: 45px;
+    }
+    .skillIcon {
+        width: 30px;
+    }
+    .skillParagraph {
+        font-size: 1rem;
+        font-family: 'Russo One', 'Roboto', sans-serif;
+        color: var(--accentColor);
+    }
+}
+
 /* || SECTION PROJECTS */
 
 .projectsSection {
@@ -1061,78 +1076,125 @@ main > * {
 }
 
 .project {
-    border-left: 20px;
-    border-radius: 10px;
-    border-color: var(--accentColor);
-    border-style: solid;
-    padding-left: 30px;
     display: flex;
     flex-flow: column;
-    gap: 40px;
+    gap: min(60px, 10vw);
+    margin-right: auto;
+    width: fit-content;
+    position: relative;
+    padding-left: min(10.5vw, 40px);
 }
 
 .project01 {
-    margin-bottom: 160px;
+    margin-bottom: min(160px, 15vh);
 }
 
 .project02 {
-    margin-top: 160px;
+    margin-top: min(160px, 15vh);
 }
+
 
 .projectImgContainer {
     display: flex;
-    gap: 50px;
     max-height: 600px;
-    max-width: 320px;
-    justify-content: space-between;
+    gap: min(20px, 2vw);
+    width: fit-content;
 }
 
 .projectImg {
-    width: 250px;
-    height: 450px;
+    max-width: 300px;
+    width: calc(50% - min(10px, 1vw));
     object-fit: cover;
     border-radius: 10px;
+    box-shadow: var(--shadowAround);
+    
+}
+
+
+@media screen and (max-width: 550px) {
+    .projectImg02, .projectImg04 {
+        display: none;
+    }
+    .projectImg01, .projectImg03 {
+        width: 100%;
+    }
 }
 
 .projectDescription {
     display: flex;
     flex-flow: column;
+    position: relative;
+    max-width: 620px;
+}
+
+.projectBar {
+    position: absolute;
+    width: min(3vw, 15px);
+    height: 100%;
+    background-color: var(--accentColor);
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 3px;
 }
 
 .projectLinkContainer {
     display: flex;
     align-items: center;
     gap: 15px;
+    max-width: 620px;
 }
 
 .projectHeadline {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+}
+
+.projectCreationDate {
+    font-size: 0.9rem;
 }
 
 .projectParagraph {
-    font-size: 1.25rem;
-    font-weight: bold;
+    font-size: 1.2rem;
     line-height: 150%;
-    flex: 1;
-    max-width: 600px;
     margin-top: 20px;
+    max-width: 580px;
 }
 
 .projectExecutionBtn {
     background-color: var(--accentColor);
-    height: 60px;
+    height: 50px;
     width: 140px;
     border: none;
     border-radius: 10px;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.openNewWindowIcon {
+    width: 23px;
+}
+
+.projectExecutionBtn:hover {
+    background-color: var(--secondaryColor);
 }
 
 .projectGitLink > img {
     height: 40px;
     width: 40px;
     filter: var(--filterWhite);
-} 
+    transition: transform 0.15s linear;
+}
+
+.projectGitLink > img:hover {
+    filter: var(--filterYellow);
+    transform: scale(1.2);
+}
 
 .boxContainerProjectSection {
     margin: 0 auto;
@@ -1154,14 +1216,13 @@ main > * {
     100% {
         transform: rotate(40000deg);
     }
-
 }
 
 .boxContainerProjectSection > * {
     width: clamp(40px, 4vw, 60px);
     height: clamp(40px, 4vw, 60px);
     border-radius: 20%;
-    box-shadow: var(--shodowStandart);
+    box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.4);
     position: absolute;
     background-color: var(--secondaryColor);
 }
@@ -1193,6 +1254,21 @@ main > * {
     top: 0;
     bottom: 0;
     margin: auto;
+}
+
+@media screen and (max-width: 1000px) {
+    .projectHeadline {
+        font-size: 2rem;
+    }
+    .projectParagraph {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .projectHeadline {
+        font-size: 1.7rem;
+    }
 }
 
 /* || SECTION Projects - Dialog Window */
@@ -1229,14 +1305,14 @@ body.hideOverflow {
 }
 
 .projectCloseBtn {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-color: transparent;
     filter: var(--filterWhite);
     border: none;
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: min(20px, 3vw);
+    top: min(20px, 3vw);
     z-index: 1;
 }
 
@@ -1640,7 +1716,7 @@ body.hideOverflow {
 footer {
     width: 100%;
     border-top: 5px solid var(--accentColor);
-    padding: 80px 0;
+    padding: min(80px, 6vh) 0;
     display: flex;
     flex-flow: column;
     justify-content: center;

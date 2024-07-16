@@ -144,7 +144,6 @@ const DialogWindow = {
         });
     },
     openModal(event) {
-
         const startBtn = event.currentTarget;
 
         if(startBtn.getAttribute('data-value') === 'chess') {
@@ -157,15 +156,15 @@ const DialogWindow = {
                     console.error('Fehler beim Laden des Moduls:', err);
                 });
         };
-
-        // if(startBtn.getAttribute('data-value') === 'weatherApp') return WeatherApp.startSetup();
     },
     addModalProperties() {
         DialogWindow.dialog.showModal();
 
         DialogWindow.dialog.innerHTML = ''; // Clean up the dialog
         
-        DialogWindow.body.classList.add('hideOverflow'); // Blocking the scrolling
+        setTimeout(function() {
+            DialogWindow.body.classList.add('hideOverflow'); // Blocking the scrolling
+        }, 500);
 
         DialogWindow.createCloseBtn();
 

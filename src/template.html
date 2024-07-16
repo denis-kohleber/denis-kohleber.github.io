@@ -7,7 +7,7 @@
 </head>
 <body id="body">
     <nav class="nav">
-        <div class="box"></div>
+        <!-- <div class="box"></div> -->
         <div class="linkContainer" id="linkContainer">
             <a href="#aboutMeSection" class="aboutLinkHeader navLink">Über mich</a>
             <a href="#skillsSection" class="skillsLinkHeader navLink">Kenntnisse</a>
@@ -140,22 +140,22 @@
                     <h4 class="skillboxHeadline skillboxHeadline01">Sprachen /<br>Frameworks</h4>
                     <div class="partingLine"></div>
                     <div class="skillsContainer">
-                        <div class="skill01 skill">
+                        <figure class="skill01 skill">
                             <img src="<%=require('./assets/html-logo-yellow.svg')%>" alt="" class="skillIcon01 skillIcon">
-                            <p class="skillParagraph skillParagraph01">HTML</p>
-                        </div>
-                        <div class="skill02 skill">
+                            <figcaption class="skillParagraph skillParagraph01">HTML</figcaption>
+                        </figure>
+                        <figure class="skill02 skill">
                             <img src="<%=require('./assets/css-logo-yellow.svg')%>" alt="" class="skillIcon02 skillIcon">
-                            <p class="skillParagraph skillParagraph02">CSS</p>
-                        </div>
-                        <div class="skill03 skill">
+                            <figcaption class="skillParagraph skillParagraph02">CSS</figcaption>
+                        </figure>
+                        <figure class="skill03 skill">
                             <img src="<%=require('./assets/js-logo-yellow.svg')%>" alt="" class="skillIcon03 skillIcon">
-                            <p class="skillParagraph skillParagraph03">JavaScript</p>
-                        </div>
-                        <div class="skill04 skill">
+                            <figcaption class="skillParagraph skillParagraph03">JavaScript</figcaption>
+                        </figure>
+                        <figure class="skill04 skill">
                             <img src="<%=require('./assets/react-logo-yellow.svg')%>" alt="" class="skillIcon04 skillIcon">
-                            <p class="skillParagraph skillParagraph04">React</p>
-                        </div>
+                            <figcaption class="skillParagraph skillParagraph04">React</figcaption>
+                        </figure>
                     </div>
                     <div class="skillboxFooter skillboxFooter01">
                         <div class="partingLine"></div>
@@ -173,18 +173,18 @@
                     <h4 class="skillboxHeadline skillboxHeadline02">Sonstige<br>Technologien</h4>
                     <div class="partingLine"></div>
                     <div class="skillsContainer">
-                        <div class="skill05 skill">
+                        <figure class="skill05 skill">
                             <img src="<%=require('./assets/git-logo-yellow.svg')%>" alt="" class="skillIcon05 skillIcon">
-                            <p class="skillParagraph skillParagraph05">Git</p>
-                        </div>
-                        <div class="skill06 skill">
+                            <figcaption class="skillParagraph skillParagraph05">Git</figcaption>
+                        </figure>
+                        <figure class="skill06 skill">
                             <img src="<%=require('./assets/webpack-logo-yellow.svg')%>" alt="" class="skillIcon06 skillIcon">
-                            <p class="skillParagraph skillParagraph06">Webpack</p>
-                        </div>
-                        <div class="skill07 skill">
+                            <figcaption class="skillParagraph skillParagraph06">Webpack</figcaption>
+                        </figure>
+                        <figure class="skill07 skill">
                             <img src="<%=require('./assets/figma-logo-yellow.svg')%>" alt="" class="skillIcon07 skillIcon">
-                            <p class="skillParagraph skillParagraph07">Figma</p>
-                        </div>
+                            <figcaption class="skillParagraph skillParagraph07">Figma</figcaption>
+                        </figure>
                     </div>
                     <div class="skillboxFooter skillboxFooter02">
                         <div class="partingLine"></div>
@@ -205,17 +205,20 @@
             </h3>
 
             <article class="project project01 section" id="weatherAppArticle">
+                <div class="projectBar"></div>
                 <div class="projectImgContainer projectImgContainer01">
-                    <!-- <img src="" alt="" class="projectImg01 projectImg"> -->
-                    <!-- <img src="" alt="" class="projectImg02 projectImg"> -->
+                    <img src="<%=require('./assets/project-photos/weatherapp-photo01.png')%>" alt="" class="projectImg01 projectImg">
+                    <img src="<%=require('./assets/project-photos/weatherapp-photo02.png')%>" alt="" class="projectImg02 projectImg">
                 </div>
                 <div class="projectDescription projectDescription01">
                     <h4 class="projectHeadline projectHeadline01">Wetter App</h4>
                     <p class="projectCreationDate projectCreationDate01">10.04.2024</p>
-                    <p class="projectParagraph projectParagraph01">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In labore ea quam laborum harum illum amet enim quibusdam eius quaerat illo sint, voluptatum, reiciendis voluptatibus hic ad aut atque nulla?</p>
+                    <p class="projectParagraph projectParagraph01">Dieses Projekt war eines meiner ersten und diente als ein kleines, schnelles Übungsprojekt, um meine Fähigkeiten im asynchronen Programmieren und im Umgang mit JSON-Daten zu vertiefen. Das spätere, aktualisierte Design(12.07.2024) wurde nicht aus der Notwendigkeit, sondern aus Beweggründen der Vollständigkeit hinzugefügt.</p>
                 </div>
                 <div class="projectLinkContainer01 projectLinkContainer">
-                    <button class="projectExecutionBtn projectExecutionBtn01" data-value="weatherApp">Ausführen</button>
+                    <button class="projectExecutionBtn projectExecutionBtn01" data-value="weatherApp">Öffnen
+                        <img src="<%=require('./assets/open-in-new.svg')%>" alt="" class="openNewWindowIcon">
+                    </button>
                     <a class="projectGitLink projectGitLink01" href="">
                         <img src="<%=require('./assets/github.svg')%>" alt="">
                     </a>
@@ -231,14 +234,15 @@
             </div>
 
             <article class="project project02 section" id="chessArticle">
+                <div class="projectBar"></div>
                 <div class="projectImgContainer projectImgContainer02">
-                    <!-- <img src="" alt="" class="projectImg03 projectImg"> -->
-                    <!-- <img src="" alt="" class="projectImg04 projectImg"> -->
+                    <img src="<%=require('./assets/project-photos/chess-photo01.png')%>" alt="" class="projectImg03 projectImg">
+                    <img src="<%=require('./assets/project-photos/chess-photo02.png')%>" alt="" class="projectImg04 projectImg">
                 </div>
                 <div class="projectDescription projectDescription02">
                     <h4 class="projectHeadline projectHeadline02">Schach</h4>
                     <p class="projectCreationDate projectCreationDate02">10.04.2024</p>
-                    <p class="projectParagraph projectParagraph02">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur architecto itaque expedita iste neque dicta esse illo illum. Sed error iusto repudiandae! Nesciunt fuga aut eos natus inventore ab expedita.</p>
+                    <p class="projectParagraph projectParagraph02">Als ich mit JavaScript Freundschaft schloss und diese immer enger wurde, benötigte ich zum nachvollziehen der Entwicklung einen Test. Ein Schachspiel war dafür geeignet, es war zeitlich machbar, anspruchsvoll und erweiterbar. Der Fokus lag darauf, ein eigenes System zu entwickeln, um meinen Fortschritt zu erkennen und den noch nötigen zu identifizieren.</p>
                 </div>
                 <div class="projectLinkContainer02 projectLinkContainer">
                     <button class="projectExecutionBtn projectExecutionBtn02" data-value="chess">Ausführen</button>
@@ -284,141 +288,7 @@
     </footer>
     
     <dialog id="projectDialog">
-
-        <div class="chessSetup">
-            <div class="boardInnerBorder">
-                <div class="mainBoard" id="board">
-                    <div class="fieldCluster white" id="field01">
-                        <img src="<%=require('./assets/chessPieces/towerBlack.svg')%>" id="tower01Black">
-                    </div>
-                    <div class="fieldCluster black" id="field02">
-                        <img src="<%=require('./assets/chessPieces/knightBlack.svg')%>" id="knight01Black">
-                    </div>
-                    <div class="fieldCluster white" id="field03">
-                        <img src="<%=require('./assets/chessPieces/bishopBlack.svg')%>" id="bishop01Black">
-                    </div>
-                    <div class="fieldCluster black" id="field04">
-                        <img src="<%=require('./assets/chessPieces/queenBlack.svg')%>" id="queen01Black">
-                    </div>
-                    <div class="fieldCluster white" id="field05">
-                        <img src="<%=require('./assets/chessPieces/kingBlack.svg')%>" id="king01Black">
-                    </div>
-                    <div class="fieldCluster black" id="field06">
-                        <img src="<%=require('./assets/chessPieces/bishopBlack.svg')%>" id="bishop02Black">
-                    </div>
-                    <div class="fieldCluster white" id="field07">
-                        <img src="<%=require('./assets/chessPieces/knightBlack.svg')%>" id="knight02Black">
-                    </div>
-                    <div class="fieldCluster black" id="field08">
-                        <img src="<%=require('./assets/chessPieces/towerBlack.svg')%>" id="tower02Black">
-                    </div>
-                    <div class="fieldCluster black" id="field09">
-                        <img src="<%=require('./assets/chessPieces/pawnBlack.svg')%>" id="pawn01Black">
-                    </div>
-                    <div class="fieldCluster white" id="field10">
-                        <img src="<%=require('./assets/chessPieces/pawnBlack.svg')%>" id="pawn02Black">
-                    </div>
-                    <div class="fieldCluster black" id="field11">
-                        <img src="<%=require('./assets/chessPieces/pawnBlack.svg')%>" id="pawn03Black">
-                    </div>
-                    <div class="fieldCluster white" id="field12">
-                        <img src="<%=require('./assets/chessPieces/pawnBlack.svg')%>" id="pawn04Black">
-                    </div>
-                    <div class="fieldCluster black" id="field13">
-                        <img src="<%=require('./assets/chessPieces/pawnBlack.svg')%>" id="pawn05Black">
-                    </div>
-                    <div class="fieldCluster white" id="field14">
-                        <img src="<%=require('./assets/chessPieces/pawnBlack.svg')%>" id="pawn06Black">
-                    </div>
-                    <div class="fieldCluster black" id="field15">
-                        <img src="<%=require('./assets/chessPieces/pawnBlack.svg')%>" id="pawn07Black">
-                    </div>
-                    <div class="fieldCluster white" id="field16">
-                        <img src="<%=require('./assets/chessPieces/pawnBlack.svg')%>" id="pawn08Black">
-                    </div>
-                    <div class="fieldCluster white" id="field17"></div>
-                    <div class="fieldCluster black" id="field18"></div>
-                    <div class="fieldCluster white" id="field19"></div>
-                    <div class="fieldCluster black" id="field20"></div>
-                    <div class="fieldCluster white" id="field21"></div>
-                    <div class="fieldCluster black" id="field22"></div>
-                    <div class="fieldCluster white" id="field23"></div>
-                    <div class="fieldCluster black" id="field24"></div>
-                    <div class="fieldCluster black" id="field25"></div>
-                    <div class="fieldCluster white" id="field26"></div>
-                    <div class="fieldCluster black" id="field27"></div>
-                    <div class="fieldCluster white" id="field28"></div>
-                    <div class="fieldCluster black" id="field29"></div>
-                    <div class="fieldCluster white" id="field30"></div>
-                    <div class="fieldCluster black" id="field31"></div>
-                    <div class="fieldCluster white" id="field32"></div>
-                    <div class="fieldCluster white" id="field33"></div>
-                    <div class="fieldCluster black" id="field34"></div>
-                    <div class="fieldCluster white" id="field35"></div>
-                    <div class="fieldCluster black" id="field36"></div>
-                    <div class="fieldCluster white" id="field37"></div>
-                    <div class="fieldCluster black" id="field38"></div>
-                    <div class="fieldCluster white" id="field39"></div>
-                    <div class="fieldCluster black" id="field40"></div>
-                    <div class="fieldCluster black" id="field41"></div>
-                    <div class="fieldCluster white" id="field42"></div>
-                    <div class="fieldCluster black" id="field43"></div>
-                    <div class="fieldCluster white" id="field44"></div>
-                    <div class="fieldCluster black" id="field45"></div>
-                    <div class="fieldCluster white" id="field46"></div>
-                    <div class="fieldCluster black" id="field47"></div>
-                    <div class="fieldCluster white" id="field48"></div>
-                    <div class="fieldCluster white" id="field49">
-                        <img src="<%=require('./assets/chessPieces/pawnWhite.svg')%>" id="pawn01White">
-                    </div>
-                    <div class="fieldCluster black" id="field50">
-                        <img src="<%=require('./assets/chessPieces/pawnWhite.svg')%>" id="pawn02White">
-                    </div>
-                    <div class="fieldCluster white" id="field51">
-                        <img src="<%=require('./assets/chessPieces/pawnWhite.svg')%>" id="pawn03White">
-                    </div>
-                    <div class="fieldCluster black" id="field52">
-                        <img src="<%=require('./assets/chessPieces/pawnWhite.svg')%>" id="pawn04White">
-                    </div>
-                    <div class="fieldCluster white" id="field53">
-                        <img src="<%=require('./assets/chessPieces/pawnWhite.svg')%>" id="pawn05White">
-                    </div>
-                    <div class="fieldCluster black" id="field54">
-                        <img src="<%=require('./assets/chessPieces/pawnWhite.svg')%>" id="pawn06White">
-                    </div>
-                    <div class="fieldCluster white" id="field55">
-                        <img src="<%=require('./assets/chessPieces/pawnWhite.svg')%>" id="pawn07White">
-                    </div>
-                    <div class="fieldCluster black" id="field56">
-                        <img src="<%=require('./assets/chessPieces/pawnWhite.svg')%>" id="pawn08White">
-                    </div>
-                    <div class="fieldCluster black" id="field57">
-                        <img src="<%=require('./assets/chessPieces/towerWhite.svg')%>" id="tower01White">
-                    </div>
-                    <div class="fieldCluster white" id="field58">
-                        <img src="<%=require('./assets/chessPieces/knightWhite.svg')%>" id="knight01White">
-                    </div>
-                    <div class="fieldCluster black" id="field59">
-                        <img src="<%=require('./assets/chessPieces/bishopWhite.svg')%>" id="bishop01White">
-                    </div>
-                    <div class="fieldCluster white" id="field60">
-                        <img src="<%=require('./assets/chessPieces/queenWhite.svg')%>" id="queen01White">
-                    </div>
-                    <div class="fieldCluster black" id="field61">
-                        <img src="<%=require('./assets/chessPieces/kingWhite.svg')%>" id="king01White">
-                    </div>
-                    <div class="fieldCluster white" id="field62">
-                        <img src="<%=require('./assets/chessPieces/bishopWhite.svg')%>" id="bishop02White">
-                    </div>
-                    <div class="fieldCluster black" id="field63">
-                        <img src="<%=require('./assets/chessPieces/knightWhite.svg')%>" id="knight02White">
-                    </div>
-                    <div class="fieldCluster white" id="field64">
-                        <img src="<%=require('./assets/chessPieces/towerWhite.svg')%>" id="tower02White">
-                    </div>
-                </div>
-            </div>
-        </div>
+        
 
     </dialog>
     
