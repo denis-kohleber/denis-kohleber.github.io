@@ -132,6 +132,7 @@ h1, h2, h3, h4 {
     position: absolute;
     height: 70px;
     z-index: 2;
+    padding-right: 14px;
     align-items: center;
     justify-content: start;
 }
@@ -161,6 +162,7 @@ h1, h2, h3, h4 {
 }
 
 .nav > .logo {
+    display: none;
     width: 30px;
     height: 30px;
     background-color: var(--accentColor);
@@ -1173,10 +1175,12 @@ main > * {
     justify-content: center;
     gap: 5px;
     cursor: pointer;
+    text-decoration: none;
+    color: var(--primaryColor);
 }
 
 .openNewWindowIcon {
-    width: 23px;
+    width: 22px;
 }
 
 .projectExecutionBtn:hover {
