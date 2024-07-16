@@ -7,7 +7,7 @@
 </head>
 <body id="body">
     <nav class="nav">
-        <!-- <div class="box"></div> -->
+        <img class="logo" src="<%=require('./assets/logo.svg')%>" alt="">
         <div class="linkContainer" id="linkContainer">
             <a href="#aboutMeSection" class="aboutLinkHeader navLink">Über mich</a>
             <a href="#skillsSection" class="skillsLinkHeader navLink">Kenntnisse</a>
@@ -38,10 +38,10 @@
             <div class="box"></div>
         </div>
         <div class="photoContainer">
-            <img class="photo" src="<%=require('./assets/photo_2143w.png')%>" alt="Denis Kohleber"
+            <img class="photo" src="<%=require('./assets/portraet/photo_2143w.png')%>" alt="Denis Kohleber"
             srcset="
-            <%=require('./assets/photo_1200w.png')%> 1x,
-            <%=require('./assets/photo_2143w.png')%> 2x">
+            <%=require('./assets/portraet/photo_1200w.png')%> 1x,
+            <%=require('./assets/portraet/photo_2143w.png')%> 2x">
             <div class="box"></div>
             <div class="box"></div>
         </div>
@@ -98,32 +98,32 @@
                     <p class="zoomedParagraph"></p>
                 </div>
                 <article class="service01 service">
-                    <img class="serviceImg" src="<%=require('./assets/responsive.svg')%>" alt="">
+                    <img class="serviceImg" src="<%=require('./assets/service-icons/responsive.svg')%>" alt="">
                     <h4 class="serviceHeadline01 serviceHeadline">Responsive Design</h4>
                     <p class="serviceParagraph01 serviceParagraph sr-only">Ich stelle eine optimale Darstellung auf allen Geräten sicher. Wodurch eine konsistente Benutzererfahrung erfolgt, ganz gleich, ob auf Desktop, Tablet oder Smartphone.</p>
                 </article>
                 <article class="service02 service">
-                    <img class="serviceImg" src="<%=require('./assets/accessibility.svg')%>" alt="">
+                    <img class="serviceImg" src="<%=require('./assets/service-icons/accessibility.svg')%>" alt="">
                     <h4 class="serviceHeadline02 serviceHeadline">Accessibility</h4>
                     <p class="serviceParagraph02 serviceParagraph sr-only">Inklusion ist fester Bestandteil des Web. Meine Arbeit wird so gestaltet, dass eine uneingeschränkte Bedienung für alle Nutzer gewährleistet wird, einschließlich Menschen mit Behinderung.</p>
                 </article>
                 <article class="service03 service">
-                    <img class="serviceImg" src="<%=require('./assets/usability.svg')%>" alt="">
+                    <img class="serviceImg" src="<%=require('./assets/service-icons/usability.svg')%>" alt="">
                     <h4 class="serviceHeadline03 serviceHeadline">Usability</h4>
                     <p class="serviceParagraph03 serviceParagraph sr-only"> Ich lege Wert auf eine einfache Navigation und ein konsistentes Layout, um eine positive Benutzererfahrung zu bieten. Die Nutzung des Nutzers steht und fällt mit der Benutzerfreundlichkeit.</p>
                 </article>
                 <article class="service04 service">
-                    <img class="serviceImg" src="<%=require('./assets/performance.svg')%>" alt="">
+                    <img class="serviceImg" src="<%=require('./assets/service-icons/performance.svg')%>" alt="">
                     <h4 class="serviceHeadline04 serviceHeadline">Performance</h4>
                     <p class="serviceParagraph04 serviceParagraph sr-only">Um die Leistung und Geschwindigkeit zu maximieren, optimiere ich Ladezeiten und stelle sicher, dass kritische Ressourcen effizient genutzt oder auch asynchron geladen werden. Eine Minimierung und Vereinfachung der aufzuwendenden Mittel steht ganz vorn.</p>
                 </article>
                 <article class="service05 service">
-                    <img class="serviceImg" src="<%=require('./assets/seo.svg')%>" alt="">
+                    <img class="serviceImg" src="<%=require('./assets/service-icons/seo.svg')%>" alt="">
                     <h4 class="serviceHeadline05 serviceHeadline">SEO</h4>
                     <p class="serviceParagraph05 serviceParagraph sr-only">Das Bauen einer Seite erfolgt bei mir unter Berücksichtigung der SEO Optimierungen, die auf einer Seite im Rahmen eines Entwicklers möglich sind, um die Sichtbarkeit sowie die Referenzierung in Suchmaschinen zu gewährleisten.</p>
                 </article>
                 <article class="service06 service">
-                    <img class="serviceImg" src="<%=require('./assets/code-quality.svg')%>" alt="">
+                    <img class="serviceImg" src="<%=require('./assets/service-icons/code-quality.svg')%>" alt="">
                     <h4 class="serviceHeadline06 serviceHeadline">Code Quality</h4>
                     <p class="serviceParagraph06 serviceParagraph sr-only">Ich strebe saubere Strukturen und Übersichtlichkeit beim Code an, um zukünftige Wartungen und Skalierungen zu erleichtern.</p>
                 </article>
@@ -136,24 +136,24 @@
             </h3>
             <div class="skillboxContainer">
                 <article class="skillbox skillbox01">
-                    <img src="<%=require('./assets/languages.svg')%>" alt="" class="skillboxIcon skillboxIcon01">
+                    <img src="<%=require('./assets/skill-icons/languages.svg')%>" alt="" class="skillboxIcon skillboxIcon01">
                     <h4 class="skillboxHeadline skillboxHeadline01">Sprachen /<br>Frameworks</h4>
                     <div class="partingLine"></div>
                     <div class="skillsContainer">
                         <figure class="skill01 skill">
-                            <img src="<%=require('./assets/html-logo-yellow.svg')%>" alt="" class="skillIcon01 skillIcon">
+                            <img src="<%=require('./assets/skill-icons/html-logo-yellow.svg')%>" alt="" class="skillIcon01 skillIcon">
                             <figcaption class="skillParagraph skillParagraph01">HTML</figcaption>
                         </figure>
                         <figure class="skill02 skill">
-                            <img src="<%=require('./assets/css-logo-yellow.svg')%>" alt="" class="skillIcon02 skillIcon">
+                            <img src="<%=require('./assets/skill-icons/css-logo-yellow.svg')%>" alt="" class="skillIcon02 skillIcon">
                             <figcaption class="skillParagraph skillParagraph02">CSS</figcaption>
                         </figure>
                         <figure class="skill03 skill">
-                            <img src="<%=require('./assets/js-logo-yellow.svg')%>" alt="" class="skillIcon03 skillIcon">
+                            <img src="<%=require('./assets/skill-icons/js-logo-yellow.svg')%>" alt="" class="skillIcon03 skillIcon">
                             <figcaption class="skillParagraph skillParagraph03">JavaScript</figcaption>
                         </figure>
                         <figure class="skill04 skill">
-                            <img src="<%=require('./assets/react-logo-yellow.svg')%>" alt="" class="skillIcon04 skillIcon">
+                            <img src="<%=require('./assets/skill-icons/react-logo-yellow.svg')%>" alt="" class="skillIcon04 skillIcon">
                             <figcaption class="skillParagraph skillParagraph04">React</figcaption>
                         </figure>
                     </div>
@@ -169,20 +169,20 @@
                 </article>
 
                 <article class="skillbox skillbox02">
-                    <img src="<%=require('./assets/technologien.svg')%>" alt="" class="skillboxIcon skillboxIcon02">
+                    <img src="<%=require('./assets/skill-icons/technologien.svg')%>" alt="" class="skillboxIcon skillboxIcon02">
                     <h4 class="skillboxHeadline skillboxHeadline02">Sonstige<br>Technologien</h4>
                     <div class="partingLine"></div>
                     <div class="skillsContainer">
                         <figure class="skill05 skill">
-                            <img src="<%=require('./assets/git-logo-yellow.svg')%>" alt="" class="skillIcon05 skillIcon">
+                            <img src="<%=require('./assets/skill-icons/git-logo-yellow.svg')%>" alt="" class="skillIcon05 skillIcon">
                             <figcaption class="skillParagraph skillParagraph05">Git</figcaption>
                         </figure>
                         <figure class="skill06 skill">
-                            <img src="<%=require('./assets/webpack-logo-yellow.svg')%>" alt="" class="skillIcon06 skillIcon">
+                            <img src="<%=require('./assets/skill-icons/webpack-logo-yellow.svg')%>" alt="" class="skillIcon06 skillIcon">
                             <figcaption class="skillParagraph skillParagraph06">Webpack</figcaption>
                         </figure>
                         <figure class="skill07 skill">
-                            <img src="<%=require('./assets/figma-logo-yellow.svg')%>" alt="" class="skillIcon07 skillIcon">
+                            <img src="<%=require('./assets/skill-icons/figma-logo-yellow.svg')%>" alt="" class="skillIcon07 skillIcon">
                             <figcaption class="skillParagraph skillParagraph07">Figma</figcaption>
                         </figure>
                     </div>

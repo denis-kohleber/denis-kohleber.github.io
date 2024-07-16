@@ -29,7 +29,8 @@ module.exports = {
         new HtmlWebpackPlugin({
            title: "Denis Kohleber",
            filename: "index.html",
-           template: "src/template.html"
+           template: "src/template.html",
+           favicon: "src/assets/logo.svg"
         }),
         new MiniCssExtractPlugin({
             filename: 'style.css',

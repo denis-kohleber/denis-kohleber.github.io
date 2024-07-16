@@ -132,7 +132,6 @@ h1, h2, h3, h4 {
     position: absolute;
     height: 70px;
     z-index: 2;
-    padding-right: 14px;
     align-items: center;
     justify-content: start;
 }
@@ -161,7 +160,7 @@ h1, h2, h3, h4 {
     transition: background-image 0.3s ease;
 }
 
-.nav > .box {
+.nav > .logo {
     width: 30px;
     height: 30px;
     background-color: var(--accentColor);
