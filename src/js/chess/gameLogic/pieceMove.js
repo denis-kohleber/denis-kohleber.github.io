@@ -12,6 +12,7 @@ export const selectors = {
     addEventsToBoard() {
         selectors.htmlBoard.forEach((cluster) => {
             cluster.addEventListener('click', selectPieceFunctions.selectPiece);
+            cluster.addEventListener('keydown', KeyDown.handleKeyDownSelectPiece);
         })
     },
     removeEventsFromBoard() {
@@ -19,6 +20,11 @@ export const selectors = {
             cluster.removeEventListener('click', selectPieceFunctions.selectPiece);
             cluster.removeEventListener('click', turnExecution.executeTurn);
             cluster.removeEventListener('click', selectors.deselect);
+
+            cluster.removeEventListener('keydown', KeyDown.handleKeyDownSelectPiece);
+            cluster.removeEventListener('keydown', KeyDown.handleKeyDownExecuteTurn);
+            cluster.removeEventListener('keydown', KeyDown.handleKeyDownDeselect);
+
             cluster.classList.remove('highlighted');
         })
     },
@@ -28,10 +34,12 @@ export const selectors = {
             const clusterNumber = +cluster.id.slice(-2);
             if(selectors.checkCluster(clusterNumber)) {
                 cluster.addEventListener('click', turnExecution.executeTurn);
+                cluster.addEventListener('keydown', KeyDown.handleKeyDownExecuteTurn);
                 // Add a visual Mark to the Cluster
                 cluster.classList.add('highlighted');
             } else {
                 cluster.addEventListener('click', selectors.deselect);
+                cluster.addEventListener('keydown', KeyDown.handleKeyDownDeselect);
             };
         });
     },
@@ -289,3 +297,22 @@ export const turnExecution = {
         };
     },
 };
+
+const KeyDown = {
+    handleKeyDownSelectPiece(event) {
+        if (event.key === 'Enter') {
+            selectPieceFunctions.selectPiece(event);
+        };
+    },
+    handleKeyDownExecuteTurn(event) {
+        if (event.key === 'Enter') {
+            turnExecution.executeTurn(event);
+        };
+    },
+    handleKeyDownDeselect(event) {
+        if (event.key === 'Enter') {
+            selectors.deselect();
+        };
+    },
+
+}

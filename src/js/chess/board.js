@@ -42,6 +42,7 @@ const Board = {
             const fieldCluster = document.createElement('div');
             fieldCluster.className = `fieldCluster ${color}`;
             fieldCluster.id = id;
+            fieldCluster.setAttribute('tabindex', '0');
 
             if (imgSrc) {
                 const img = document.createElement('img');

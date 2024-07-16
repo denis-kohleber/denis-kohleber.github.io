@@ -93,17 +93,33 @@ const ServiceBox = {
         ServiceBox.service.forEach((service) => {
             service.addEventListener('click', ServiceBox.showArticle)
         });
+        ServiceBox.service.forEach((service) => {
+            service.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') {
+                    ServiceBox.showArticle(event);
+                }
+            });
+        });
     },
     showArticle(event) {
         const service = event.currentTarget;
 
         if(service.classList.contains('show')) {
-            return ServiceBox.zoomedArticle.classList.remove('show');
+            ServiceBox.zoomedArticle.classList.remove('show');
+
+            // Take into account the Tabindex
+            ServiceBox.service.forEach((item) => item.setAttribute('tabindex', '0'));
+            ServiceBox.zoomedArticle.setAttribute('tabindex', '-1');
+            return;
         }
 
         if(!service.classList.contains('show')) {
             ServiceBox.zoomedArticle.classList.add('show');
             ServiceBox.updateZoomedArticle(service);
+
+            // Take into account the Tabindex
+            ServiceBox.service.forEach((item) => item.setAttribute('tabindex', '-1'));
+            ServiceBox.zoomedArticle.setAttribute('tabindex', '0');
         } 
     },
     updateZoomedArticle(service) {
