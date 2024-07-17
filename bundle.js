@@ -35,21 +35,24 @@ const SideNavbar = {
         document.addEventListener('DOMContentLoaded', function () { 
             const navbarLinks = document.querySelectorAll('.navLinkMain'); 
             const sections = document.querySelectorAll('.section'); 
-
-
-          
+         
             window.addEventListener('scroll', function () { 
                 const currentPos = window.scrollY; 
           
                 sections.forEach(function (section) { 
                     const sectionTop = section.offsetTop + 500; 
                     const sectionHeight = section.offsetHeight; 
-                    const sectionId = section.id; 
+                    let sectionId = section.id; 
                     
                     if (currentPos >= sectionTop && currentPos < sectionTop + sectionHeight) { 
                         navbarLinks.forEach(function (navbarLink) { 
                             navbarLink.classList.remove('active'); 
                         }); 
+
+                        // Prevent a break in the project section
+                        if(sectionId === 'flower01') {
+                            sectionId = 'weatherAppArticle';
+                        }
 
                         // Activate Dropdown
                         SideNavbar.activateDropdown(sectionId);
@@ -81,8 +84,14 @@ const MainNavbar = {
     linkContainer: document.getElementById('linkContainer'),
     menuBtn: document.getElementById('menuBtn'),
     body: document.getElementById('body'),
+    navItems: document.querySelectorAll('.navLink'),
+    contactLink: document.getElementById('contactLink'),
     addNavbarEvent() {
         MainNavbar.removeClasses();
+
+        // Handle the tabindex by resizing
+        window.addEventListener('resize', MainNavbar.setTabindexBasedOnWidth);
+        window.addEventListener('DOMContentLoaded', MainNavbar.setTabindexBasedOnWidth);
     },
     addClasses() {
         MainNavbar.linkContainer.classList.add('showNav');
@@ -109,10 +118,38 @@ const MainNavbar = {
     changeImgCloseIcon() {
         const closeIcon = __webpack_require__(/*! ../assets/close.svg */ "./src/assets/close.svg");
         MainNavbar.menuBtn.style.backgroundImage = `url(${closeIcon})`;
+        MainNavbar.addTabIndex();
     },
     changeImgMenuIcon() {
         const menuIcon = __webpack_require__(/*! ../assets/menu.svg */ "./src/assets/menu.svg");
         MainNavbar.menuBtn.style.backgroundImage = `url(${menuIcon})`;
+        MainNavbar.removeTabIndex();
+    },
+    addTabIndex() {
+        MainNavbar.navItems.forEach((item) => item.setAttribute('tabindex', '0'));
+        MainNavbar.menuBtn.setAttribute('tabindex', '1');
+
+        MainNavbar.contactLink.addEventListener('keydown', MainNavbar.handleTabByContactLink);
+    },
+    removeTabIndex() {
+        MainNavbar.navItems.forEach((item) => item.setAttribute('tabindex', '-1'));
+        MainNavbar.menuBtn.setAttribute('tabindex', '0');
+
+        MainNavbar.contactLink.removeEventListener('keydown', MainNavbar.handleTabByContactLink);
+    },
+    setTabindexBasedOnWidth() {
+        if (window.innerWidth < 700) {
+            MainNavbar.navItems.forEach((item) => item.setAttribute('tabindex', '-1'));
+        } else {
+            MainNavbar.navItems.forEach((item) => item.setAttribute('tabindex', '0'));
+        }
+    },
+    // Hold the tab-navigation in the menu
+    handleTabByContactLink(event) {
+        if (event.key === 'Tab' && !event.shiftKey) {
+            event.preventDefault();
+            MainNavbar.menuBtn.focus();
+        }
     },
 };
 
@@ -123,17 +160,34 @@ const ServiceBox = {
         ServiceBox.service.forEach((service) => {
             service.addEventListener('click', ServiceBox.showArticle)
         });
+        ServiceBox.service.forEach((service) => {
+            service.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') {
+                    ServiceBox.showArticle(event);
+                }
+            });
+        });
     },
     showArticle(event) {
         const service = event.currentTarget;
 
         if(service.classList.contains('show')) {
-            return ServiceBox.zoomedArticle.classList.remove('show');
+            ServiceBox.zoomedArticle.classList.remove('show');
+
+            // Take into account the Tabindex
+            ServiceBox.service.forEach((item) => item.setAttribute('tabindex', '0'));
+            ServiceBox.zoomedArticle.setAttribute('tabindex', '-1');
+            return;
         }
 
         if(!service.classList.contains('show')) {
             ServiceBox.zoomedArticle.classList.add('show');
             ServiceBox.updateZoomedArticle(service);
+
+            // Take into account the Tabindex
+            ServiceBox.service.forEach((item) => item.setAttribute('tabindex', '-1'));
+            ServiceBox.zoomedArticle.setAttribute('tabindex', '0');
+            ServiceBox.zoomedArticle.focus();
         } 
     },
     updateZoomedArticle(service) {
