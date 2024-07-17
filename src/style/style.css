@@ -1101,15 +1101,6 @@ main > * {
     padding-left: min(10.5vw, 40px);
 }
 
-.project01 {
-    margin-bottom: min(160px, 15vh);
-}
-
-.project02 {
-    margin-top: min(160px, 15vh);
-}
-
-
 .projectImgContainer {
     display: flex;
     max-height: 600px;
@@ -1123,9 +1114,7 @@ main > * {
     object-fit: cover;
     border-radius: 10px;
     box-shadow: var(--shadowAround);
-    
 }
-
 
 @media screen and (max-width: 550px) {
     .projectImg02, .projectImg04 {
@@ -1214,6 +1203,10 @@ main > * {
 .projectGitLink:focus > img {
     filter: var(--filterYellow);
     transform: scale(1.2);
+}
+
+.flowerContainer {
+    padding: min(160px, 15vh) 0;
 }
 
 .boxContainerProjectSection {

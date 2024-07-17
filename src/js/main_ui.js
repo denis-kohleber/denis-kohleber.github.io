@@ -14,12 +14,16 @@ const SideNavbar = {
                 sections.forEach(function (section) { 
                     const sectionTop = section.offsetTop + 500; 
                     const sectionHeight = section.offsetHeight; 
-                    const sectionId = section.id; 
+                    let sectionId = section.id; 
                     
                     if (currentPos >= sectionTop && currentPos < sectionTop + sectionHeight) { 
                         navbarLinks.forEach(function (navbarLink) { 
                             navbarLink.classList.remove('active'); 
                         }); 
+
+                        if(sectionId === 'flower01') {
+                            sectionId = 'weatherAppArticle';
+                        }
 
                         // Activate Dropdown
                         SideNavbar.activateDropdown(sectionId);
