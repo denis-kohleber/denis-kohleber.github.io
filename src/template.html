@@ -6,15 +6,15 @@
     <title>Denis Kohleber</title>
 </head>
 <body id="body">
-    <nav class="nav">
+    <nav class="nav" role="dialog" aria-modal="true">
         <img class="logo" src="<%=require('./assets/logo.svg')%>" alt="">
         <div class="linkContainer" id="linkContainer">
             <a href="#aboutMeSection" class="aboutLinkHeader navLink">Über mich</a>
             <a href="#skillsSection" class="skillsLinkHeader navLink">Kenntnisse</a>
             <a href="#projectsSection" class="projectsLink navLink">Projekte</a>
-            <a href="#contactSection" class="contactLink navLink">Kontakt</a>
+            <a href="#contactSection" class="contactLink navLink" id="contactLink">Kontakt</a>
         </div>
-        <button class="menuBtn" id="menuBtn"></button>
+        <button class="menuBtn" aria-label='open menu' id="menuBtn"></button>
     </nav>
     <header>
         <div class="boxes">

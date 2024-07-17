@@ -5,9 +5,7 @@ const SideNavbar = {
         document.addEventListener('DOMContentLoaded', function () { 
             const navbarLinks = document.querySelectorAll('.navLinkMain'); 
             const sections = document.querySelectorAll('.section'); 
-
-
-          
+         
             window.addEventListener('scroll', function () { 
                 const currentPos = window.scrollY; 
           
@@ -21,6 +19,7 @@ const SideNavbar = {
                             navbarLink.classList.remove('active'); 
                         }); 
 
+                        // Prevent a break in the project section
                         if(sectionId === 'flower01') {
                             sectionId = 'weatherAppArticle';
                         }
@@ -55,8 +54,14 @@ const MainNavbar = {
     linkContainer: document.getElementById('linkContainer'),
     menuBtn: document.getElementById('menuBtn'),
     body: document.getElementById('body'),
+    navItems: document.querySelectorAll('.navLink'),
+    contactLink: document.getElementById('contactLink'),
     addNavbarEvent() {
         MainNavbar.removeClasses();
+
+        // Handle the tabindex by resizing
+        window.addEventListener('resize', MainNavbar.setTabindexBasedOnWidth);
+        window.addEventListener('DOMContentLoaded', MainNavbar.setTabindexBasedOnWidth);
     },
     addClasses() {
         MainNavbar.linkContainer.classList.add('showNav');
@@ -83,10 +88,38 @@ const MainNavbar = {
     changeImgCloseIcon() {
         const closeIcon = require('../assets/close.svg');
         MainNavbar.menuBtn.style.backgroundImage = `url(${closeIcon})`;
+        MainNavbar.addTabIndex();
     },
     changeImgMenuIcon() {
         const menuIcon = require('../assets/menu.svg');
         MainNavbar.menuBtn.style.backgroundImage = `url(${menuIcon})`;
+        MainNavbar.removeTabIndex();
+    },
+    addTabIndex() {
+        MainNavbar.navItems.forEach((item) => item.setAttribute('tabindex', '0'));
+        MainNavbar.menuBtn.setAttribute('tabindex', '1');
+
+        MainNavbar.contactLink.addEventListener('keydown', MainNavbar.handleTabByContactLink);
+    },
+    removeTabIndex() {
+        MainNavbar.navItems.forEach((item) => item.setAttribute('tabindex', '-1'));
+        MainNavbar.menuBtn.setAttribute('tabindex', '0');
+
+        MainNavbar.contactLink.removeEventListener('keydown', MainNavbar.handleTabByContactLink);
+    },
+    setTabindexBasedOnWidth() {
+        if (window.innerWidth < 700) {
+            MainNavbar.navItems.forEach((item) => item.setAttribute('tabindex', '-1'));
+        } else {
+            MainNavbar.navItems.forEach((item) => item.setAttribute('tabindex', '0'));
+        }
+    },
+    // Hold the tab-navigation in the menu
+    handleTabByContactLink(event) {
+        if (event.key === 'Tab' && !event.shiftKey) {
+            event.preventDefault();
+            MainNavbar.menuBtn.focus();
+        }
     },
 };
 
@@ -124,6 +157,7 @@ const ServiceBox = {
             // Take into account the Tabindex
             ServiceBox.service.forEach((item) => item.setAttribute('tabindex', '-1'));
             ServiceBox.zoomedArticle.setAttribute('tabindex', '0');
+            ServiceBox.zoomedArticle.focus();
         } 
     },
     updateZoomedArticle(service) {
