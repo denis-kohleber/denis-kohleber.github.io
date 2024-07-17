@@ -6,7 +6,8 @@
     <title>Denis Kohleber</title>
 </head>
 <body id="body">
-    <nav class="nav" role="dialog" aria-modal="true">
+    <nav class="nav">
+        <button class="menuBtn" aria-label='Öffnen/Schließen Menü' id="menuBtn"></button>
         <img class="logo" src="<%=require('./assets/logo.svg')%>" alt="">
         <div class="linkContainer" id="linkContainer">
             <a href="#aboutMeSection" class="aboutLinkHeader navLink">Über mich</a>
@@ -14,7 +15,6 @@
             <a href="#projectsSection" class="projectsLink navLink">Projekte</a>
             <a href="#contactSection" class="contactLink navLink" id="contactLink">Kontakt</a>
         </div>
-        <button class="menuBtn" aria-label='open menu' id="menuBtn"></button>
     </nav>
     <header>
         <div class="boxes">
@@ -39,14 +39,12 @@
         </div>
         <div class="photoContainer">
             <img class="photo"
-            src="<%=require('./assets/portraet/photo_1600w.png')%>"
+            src="<%=require('./assets/portraet/photo_1200w.png')%>"
             srcset="
-                <%=require('./assets/portraet/photo_400w.png')%> 400w,
-                <%=require('./assets/portraet/photo_800w.png')%> 800w,
-                <%=require('./assets/portraet/photo_1200w.png')%> 1200w,
-                <%=require('./assets/portraet/photo_1600w.png')%> 1600w,
-                <%=require('./assets/portraet/photo_2143w.png')%> 2143w"
-            sizes="(max-width: 700px) 60vw, 30vw"
+                <%=require('./assets/portraet/photo_400w.webp')%> 400w,
+                <%=require('./assets/portraet/photo_800w.webp')%> 800w,
+                <%=require('./assets/portraet/photo_1200w.webp')%> 1200w"
+            sizes="(max-width: 700px) 40vw, 40vw"
             alt="Denis Kohleber">
             <div class="box"></div>
             <div class="box"></div>
@@ -61,18 +59,18 @@
     </header>
 
     <main>
-        <aside class="navMain">
+        <aside class="navMain" aria-hidden='true'>
             <h3 class="overviewHeader">Übersicht</h3>
             <a href="#aboutMeSection" class="aboutMeSectionLinkMain navLinkMain" tabindex="-1">Über mich</a>
             <a href="#skillsSection" class="skillsSectionLinkMain navLinkMain" tabindex="-1">Kenntnisse</a>
             <a href="#projectsSection" id="projectsSectionNav" class="projectsSectionLinkMain navLinkMain" tabindex="-1">Projekte</a>
             <div class="dropdownNavMain" id="dropdownMenu">
                 <a href="#weatherAppArticle" class="weatherAppArticleLinkMain navLinkMain" tabindex="-1">
-                    <img src="<%=require('./assets/menu-right.svg')%>" alt="">
+                    <img src="<%=require('./assets/menu-right.svg')%>" alt="" loading="lazy">
                     <p>Wetter App</p>
                 </a>
                 <a href="#chessArticle" class="chessArticleLinkMain navLinkMain" tabindex="-1">
-                    <img src="<%=require('./assets/menu-right.svg')%>" alt="">
+                    <img src="<%=require('./assets/menu-right.svg')%>" alt="" loading="lazy">
                     <p>Schach</p>
                 </a>
             </div>
@@ -98,7 +96,7 @@
                 </p>
             </article>
             <div class="serviceContainer">
-                <div class="zoomedArticle focusable" id="zoomedArticle">
+                <div class="zoomedArticle focusable" id="zoomedArticle" aria-hidden='true'>
                     <img class="zoomedImg" src="" alt="">
                     <h4 class="zoomedHeadline"></h4>
                     <p class="zoomedParagraph"></p>
@@ -223,10 +221,10 @@
                 </div>
                 <div class="projectLinkContainer01 projectLinkContainer">
                     <a class="projectExecutionBtn projectExecutionBtn01" href="https://denis-kohleber.github.io/wetter-app/" target="_blank" data-value="weatherApp">Öffnen
-                        <img src="<%=require('./assets/open-in-new.svg')%>" alt="" class="openNewWindowIcon" loading="lazy">
+                        <img src="<%=require('./assets/open-in-new.svg')%>" alt="" class="openNewWindowIcon" loading="lazy" aria-hidden='true'>
                     </a>
-                    <a class="projectGitLink projectGitLink01" href="https://github.com/denis-kohleber/wetter-app" target="_blank">
-                        <img src="<%=require('./assets/github.svg')%>" alt="GitHub-Logo" loading="lazy">
+                    <a class="projectGitLink projectGitLink01" href="https://github.com/denis-kohleber/wetter-app" target="_blank" aria-label="GitHub Code Link">
+                        <img src="<%=require('./assets/github.svg')%>" alt="GitHub-Logo" loading="lazy" aria-hidden='true'>
                     </a>
                 </div>
             </article>
@@ -254,8 +252,8 @@
                 </div>
                 <div class="projectLinkContainer02 projectLinkContainer">
                     <button class="projectExecutionBtn projectExecutionBtn02" data-value="chess">Ausführen</button>
-                    <a class="projectGitLink projectGitLink02" href="https://github.com/denis-kohleber/chess" target="_blank">
-                        <img src="<%=require('./assets/github.svg')%>" alt="GitHub-Logo" loading="lazy">
+                    <a class="projectGitLink projectGitLink02" href="https://github.com/denis-kohleber/chess" target="_blank" aria-label="GitHub Code Link">
+                        <img src="<%=require('./assets/github.svg')%>" alt="GitHub-Logo" loading="lazy" aria-hidden='true'>
                     </a>
                 </div>
             </article>
@@ -275,11 +273,11 @@
                 </div>
                 <p>Erreichen Sie mich <wbr>über die sozialen Netzwerke:</p>
                 <div class="contactLinkContainer">
-                    <a href="https://github.com/denis-kohleber" target="_blank" class="contactGitLink contactLink">
-                        <img class="contactLinkIcon" src="<%=require('./assets/github.svg')%>" alt="GitHub-Logo" loading="lazy">
+                    <a href="https://github.com/denis-kohleber" target="_blank" class="contactGitLink contactLink" aria-label="GitHub Link">
+                        <img class="contactLinkIcon" src="<%=require('./assets/github.svg')%>" alt="GitHub-Logo" loading="lazy" aria-hidden='true'>
                     </a>
-                    <a href="https://www.linkedin.com/in/denis-kohleber-2207b5310/" class="contactLinkedInLink contactLink" target="_blank">
-                        <img class="contactLinkIcon" src="<%=require('./assets/linkedin.svg')%>" alt="LinkedIn-Logo" loading="lazy">
+                    <a href="https://www.linkedin.com/in/denis-kohleber-2207b5310/" class="contactLinkedInLink contactLink" target="_blank" aria-label="LinkedIn Link">
+                        <img class="contactLinkIcon" src="<%=require('./assets/linkedin.svg')%>" alt="LinkedIn-Logo" loading="lazy" aria-hidden='true'>
                     </a>
                 </div>
             </article>

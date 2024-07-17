@@ -30,7 +30,7 @@ module.exports = {
            title: "Denis Kohleber",
            filename: "index.html",
            template: "src/template.html",
-           favicon: "src/assets/logo.svg"
+           favicon: "src/assets/logo.svg",
         }),
         new MiniCssExtractPlugin({
             filename: 'style.css',
@@ -46,7 +46,7 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|jpg|svg|gif)$/i,
+                test: /\.(png|jpg|svg|gif|webp)$/i,
                 type: "asset/resource",
             },
             {
