@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
+:root {
+    --primaryColor: #121212;
+    --primaryColor2: #202020;
+    --primaryColor3: #242424;
+    --secondaryColor: #FFFFFF;
+    --secondaryColor2: #a3a3a3;
+    --accentColor: #ffd470;
+    --complementary: #709BFF;
+    --gray: #303030;
+}
+
 /* CSS-Reset */
 
 html, body, div, span, applet, object, iframe,
@@ -57,14 +68,6 @@ html, body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     color: var(--secondaryColor);
-    --primaryColor: #121212;
-    --primaryColor2: #202020;
-    --primaryColor3: #242424;
-    --secondaryColor: #FFFFFF;
-    --secondaryColor2: #a3a3a3;
-    --accentColor: #ffd470;
-    --complementary: #709BFF;
-    --gray: #303030;
     --filterWhite: invert(100%) sepia(0%) saturate(7500%) hue-rotate(43deg) brightness(102%) contrast(115%);
     --filterYellow: invert(89%) sepia(83%) saturate(497%) hue-rotate(316deg) brightness(98%) contrast(106%);
     --filterSecondaryColor2:  invert(75%) sepia(5%) saturate(10%) hue-rotate(349deg) brightness(88%) contrast(85%);
@@ -79,11 +82,6 @@ html, body {
     /* Prevent highlighting on Touchscreens */
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
-}
-
-/* Prevent dark-mode */
-:root {
-    color-scheme: light only;
 }
 
 /* Prevent the auto color change of Inputs */
@@ -1141,10 +1139,10 @@ main > * {
 }
 
 @media screen and (max-width: 550px) {
-    .projectImg02, .projectImg04 {
+    .projectImg02, .projectImg03 {
         display: none;
     }
-    .projectImg01, .projectImg03 {
+    .projectImg01, .projectImg04 {
         width: 100%;
     }
 }
@@ -1317,7 +1315,7 @@ dialog[open] {
 dialog {
     background-color: var(--primaryColor);
     min-width: 100vw;
-    min-height: 100svh;
+    min-height: 100vh;
     padding: 0;
     border: none;
     transform: translateX(-100vw);
@@ -1333,7 +1331,7 @@ dialog {
     }
     dialog[open]:modal {
         max-width: 100vw;
-        max-height: 100svh;
+        max-height: 100vh;
     }
 }
 
@@ -1515,8 +1513,8 @@ body.hideOverflow {
 
 @media screen and (max-height: 450px) {
     .chessSetup {
-        height: 100svh;
-        width: 100svh;
+        height: 100vh;
+        width: 100vh;
     }
 }
 

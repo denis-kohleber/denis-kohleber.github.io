@@ -9,7 +9,3 @@ SideNavbar.addFollowByScroll();
 ServiceBox.addServiceEvent();
 Flower.startAnimation();
 DialogWindow.addStartingEvent();
-
-
-    
-    
