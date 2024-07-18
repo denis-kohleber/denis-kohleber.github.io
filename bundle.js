@@ -588,9 +588,6 @@ _js_main_ui__WEBPACK_IMPORTED_MODULE_0__.ServiceBox.addServiceEvent();
 _js_main_ui__WEBPACK_IMPORTED_MODULE_0__.Flower.startAnimation();
 _js_main_ui__WEBPACK_IMPORTED_MODULE_0__.DialogWindow.addStartingEvent();
 
-
-    
-    
 })();
 
 /******/ })()
