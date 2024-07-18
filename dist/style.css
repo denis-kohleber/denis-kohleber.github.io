@@ -1354,8 +1354,8 @@ body.hideOverflow {
     filter: var(--filterWhite);
     border: none;
     position: absolute;
-    right: min(20px, 3vw);
-    top: min(20px, 3vw);
+    right: min(50px, 7vw);
+    top: min(50px, 7vw);
     z-index: 1;
 }
 
