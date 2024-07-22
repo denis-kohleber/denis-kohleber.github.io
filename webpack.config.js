@@ -1,9 +1,10 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
-    mode: "development",
+    mode: "production",
     entry: {
         bundle: path.resolve(__dirname, "src/index.js"),
     },
@@ -12,6 +13,25 @@ module.exports = {
         filename: "[name].js",
         clean: true,
         assetModuleFilename: "[name][ext]"
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            (compiler) => {
+                const TerserPlugin = require('terser-webpack-plugin');
+                new TerserPlugin({
+                  terserOptions: {
+                    compress: {},
+                  }
+                }).apply(compiler);
+              },
+            new CssMinimizerPlugin(),
+        ],
+    },
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
     },
     devtool: "source-map",
     devServer: {

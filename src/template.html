@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Denis Kohleber</title>
+    <title>Denis Kohleber - Portfolio</title>
     <meta name="darkreader-lock">
-</head>
+    <meta name="description" content="Denis Kohleber, ich entwickle Anwendungen und Webseiten, die durch intuitive Benutzerfreundlichkeit und klares Design überzeugen. ">
+    <meta name="keywords" content="Denis Kohleber, Front End Developer, Web Developer, HTML, CSS, JavaScript, React, Portfolio, Webentwicklung">
+    <meta name="author" content="Denis Kohleber">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap">
+    </noscript>
+</head>  
 <body id="body">
     <nav class="nav">
         <button class="menuBtn" aria-label='Öffnen/Schließen Menü' id="menuBtn"></button>
@@ -40,12 +52,14 @@
         </div>
         <div class="photoContainer">
             <img class="photo"
-            src="<%=require('./assets/portraet/photo_1200w.png')%>"
+            src="<%=require('./assets/portraet/photo_400w.webp')%>"
             srcset="
                 <%=require('./assets/portraet/photo_400w.webp')%> 400w,
                 <%=require('./assets/portraet/photo_800w.webp')%> 800w,
                 <%=require('./assets/portraet/photo_1200w.webp')%> 1200w"
-            sizes="(max-width: 700px) 40vw, 40vw"
+                sizes="(max-width: 600px) 400w, 
+                (max-width: 1700px) 800w, 
+                25vw"
             alt="Denis Kohleber">
             <div class="box"></div>
             <div class="box"></div>
