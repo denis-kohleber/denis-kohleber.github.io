@@ -514,7 +514,7 @@ h2 {
     grid-template: 8.5fr 1.5fr / 1fr auto;
     z-index: 1;
     min-height: 250px;
-    max-height: min(800px, 70vh);
+    max-height: min(600px, 70vh);
     gap: min(min(2vw, 2vh), 15px);
     animation: fade-in-down 1s forwards ease-in;
     opacity: 0;
@@ -547,7 +547,7 @@ h2 {
     border-radius: min(min(2vw, 2vh), 10px);
     object-fit: cover;
     min-height: 250px;
-    max-height: min(800px, 70vh);
+    max-height: min(600px, 70vh);
 }
 
 @keyframes fade-in {
@@ -812,10 +812,11 @@ main > * {
 
 .aboutMeText {
     line-height: 2rem;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 1.4rem;
     color: var(--secondaryColor); 
     max-width: 800px;
+    letter-spacing: 0.5px;
 }
 
 @media screen and (max-width: 600px) {
@@ -1178,11 +1179,20 @@ main > * {
     font-size: 0.9rem;
 }
 
+.projectSkillContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.projectSkillIcon {
+    height: 30px;
+}
+
 .projectParagraph {
     font-size: 1.2rem;
     line-height: 150%;
-    margin-top: 20px;
     max-width: 580px;
+    margin: 20px 0;
 }
 
 .projectExecutionBtn {

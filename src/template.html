@@ -80,11 +80,11 @@
             <a href="#skillsSection" class="skillsSectionLinkMain navLinkMain" tabindex="-1">Kenntnisse</a>
             <a href="#projectsSection" id="projectsSectionNav" class="projectsSectionLinkMain navLinkMain" tabindex="-1">Projekte</a>
             <div class="dropdownNavMain" id="dropdownMenu">
-                <a href="#weatherAppArticle" class="weatherAppArticleLinkMain navLinkMain" tabindex="-1">
+                <a href="#project01" class="project01LinkMain navLinkMain" tabindex="-1">
                     <img src="<%=require('./assets/menu-right.svg')%>" alt="" loading="lazy">
-                    <p>Wetter App</p>
+                    <p>Veritas</p>
                 </a>
-                <a href="#chessArticle" class="chessArticleLinkMain navLinkMain" tabindex="-1">
+                <a href="#project02" class="project02LinkMain navLinkMain" tabindex="-1">
                     <img src="<%=require('./assets/menu-right.svg')%>" alt="" loading="lazy">
                     <p>Schach</p>
                 </a>
@@ -107,7 +107,7 @@
                     <br><br>
                     Eine gut organisierte Entwicklung und ein sauberer Arbeitsablauf sind für mich entscheidend für den Projekterfolg. 
                     <br><br>
-                    Meine stetige Bereitschaft zum Lernen kommt mir zugute, selbst widrige Hindernisse zu überwinden und neuen Herausforderungen erfolgreich zu begegnen.
+                    Meine Bereitschaft, stets neue Kenntnisse zu erwerben, hilft mir, selbst widrige Hindernisse zu überwinden und neuen Herausforderungen erfolgreich zu begegnen.
                 </p>
             </article>
             <div class="serviceContainer">
@@ -156,7 +156,7 @@
             <div class="skillboxContainer">
                 <article class="skillbox skillbox01">
                     <img src="<%=require('./assets/skill-icons/languages.svg')%>" alt="" class="skillboxIcon skillboxIcon01" loading="lazy">
-                    <h4 class="skillboxHeadline skillboxHeadline01">Sprachen /<br>Libraries</h4>
+                    <h4 class="skillboxHeadline skillboxHeadline01">Sprachen /<br>Bibliotheken</h4>
                     <div class="partingLine"></div>
                     <div class="skillsContainer">
                         <figure class="skill01 skill">
@@ -172,6 +172,10 @@
                             <figcaption class="skillParagraph skillParagraph03">JavaScript</figcaption>
                         </figure>
                         <figure class="skill04 skill">
+                            <img src="<%=require('./assets/skill-icons/ts-logo-yellow.svg')%>" alt="" class="skillIcon04 skillIcon" loading="lazy">
+                            <figcaption class="skillParagraph skillParagraph04">TypeScript</figcaption>
+                        </figure>
+                        <figure class="skill05 skill">
                             <img src="<%=require('./assets/skill-icons/react-logo-yellow.svg')%>" alt="" class="skillIcon04 skillIcon" loading="lazy">
                             <figcaption class="skillParagraph skillParagraph04">React</figcaption>
                         </figure>
@@ -189,22 +193,33 @@
 
                 <article class="skillbox skillbox02">
                     <img src="<%=require('./assets/skill-icons/technologien.svg')%>" alt="" class="skillboxIcon skillboxIcon02" loading="lazy">
+
                     <h4 class="skillboxHeadline skillboxHeadline02">Sonstige<br>Technologien</h4>
+
                     <div class="partingLine"></div>
+
                     <div class="skillsContainer">
                         <figure class="skill05 skill">
                             <img src="<%=require('./assets/skill-icons/git-logo-yellow.svg')%>" alt="" class="skillIcon05 skillIcon" loading="lazy">
                             <figcaption class="skillParagraph skillParagraph05">Git</figcaption>
                         </figure>
+
                         <figure class="skill06 skill">
                             <img src="<%=require('./assets/skill-icons/webpack-logo-yellow.svg')%>" alt="" class="skillIcon06 skillIcon" loading="lazy">
                             <figcaption class="skillParagraph skillParagraph06">Webpack</figcaption>
                         </figure>
+
                         <figure class="skill07 skill">
                             <img src="<%=require('./assets/skill-icons/figma-logo-yellow.svg')%>" alt="" class="skillIcon07 skillIcon" loading="lazy">
                             <figcaption class="skillParagraph skillParagraph07">Figma</figcaption>
                         </figure>
+
+                        <figure class="skill08 skill">
+                            <img src="<%=require('./assets/skill-icons/vite-logo-yellow.svg')%>" alt="" class="skillIcon07 skillIcon" loading="lazy">
+                            <figcaption class="skillParagraph skillParagraph07">Vite</figcaption>
+                        </figure>
                     </div>
+
                     <div class="skillboxFooter skillboxFooter02">
                         <div class="partingLine"></div>
                         <div class="boxContainerSkillSection">
@@ -223,22 +238,33 @@
                 <div class="underline"></div>
             </h3>
 
-            <article class="project project01 section" id="weatherAppArticle">
+            <article class="project project01 section" id="project01">
                 <div class="projectBar"></div>
+
                 <div class="projectImgContainer projectImgContainer01">
-                    <img src="<%=require('./assets/project-photos/weatherapp-photo01.png')%>" alt="Wetter-App Hauptseite" class="projectImg01 projectImg" loading="lazy">
-                    <img src="<%=require('./assets/project-photos/weatherapp-photo02.png')%>" alt="Wetter-App 3 Tagesübersicht Seite" class="projectImg02 projectImg" loading="lazy">
+                    <img src="<%=require('./assets/project-photos/veritas-photo01.webp')%>" alt="Wetter-App Hauptseite" class="projectImg01 projectImg" loading="lazy">
+                    <img src="<%=require('./assets/project-photos/veritas-photo02.webp')%>" alt="Wetter-App 3 Tagesübersicht Seite" class="projectImg02 projectImg" loading="lazy">
                 </div>
+
                 <div class="projectDescription projectDescription01">
-                    <h4 class="projectHeadline projectHeadline01">Wetter App</h4>
-                    <p class="projectCreationDate projectCreationDate01">07.05.2024</p>
-                    <p class="projectParagraph projectParagraph01">Dieses Projekt war eines meiner ersten und diente als ein kleines, schnelles Übungsprojekt, um meine Fähigkeiten im asynchronen Programmieren und im Umgang mit JSON-Daten zu vertiefen. Die Funktionalitäten begrenzen sich auf die von der Wetter-API verfügbaren Daten bzw. von mir nutzbaren Daten. <br><br> Das spätere, aktualisierte Design (12.07.2024) wurde nicht aus der Notwendigkeit, sondern aus Beweggründen der Vollständigkeit hinzugefügt. Obwohl noch ausbaufähig, dient es dem Zweck.</p>
+                    <h4 class="projectHeadline projectHeadline01">Veritas</h4>
+                    <p class="projectCreationDate projectCreationDate01">14.09.2024</p>
+                    <p class="projectParagraph projectParagraph01">Ein Onlineshop-Projekt bot mir die ideale Plattform, um vielseitige Funktionen zu integrieren und meine Fähigkeiten in React und TypeScript zu demonstrieren. Alle wesentlichen Features eines modernen Online-Shops, wie Warenkorb, Produktsuche, Produktfilterung und weitere, sind vollständig enthalten. Die Anwendung konzentriert sich ausschließlich auf das Frontend, ein Backend ist nicht involviert.</p>
+                    <div class="projectSkillContainer">
+                        <img src="<%=require('./assets/project-skill-icons/html.svg')%>" alt="HTML" class="projectSkillIcon" loading="lazy">
+                        <img src="<%=require('./assets/project-skill-icons/css.svg')%>" alt="CSS" class="projectSkillIcon" loading="lazy">
+                        <img src="<%=require('./assets/project-skill-icons/ts.svg')%>" alt="TypeScript" class="projectSkillIcon" loading="lazy">
+                        <img src="<%=require('./assets/project-skill-icons/react.svg')%>" alt="React" class="projectSkillIcon" loading="lazy">
+                        <img src="<%=require('./assets/project-skill-icons/vite.svg')%>" alt="Vite" class="projectSkillIcon" loading="lazy">
+                    </div>
                 </div>
+
                 <div class="projectLinkContainer01 projectLinkContainer">
-                    <a class="projectExecutionBtn projectExecutionBtn01" href="https://denis-kohleber.github.io/wetter-app/" target="_blank" data-value="weatherApp">Öffnen
+                    <a class="projectExecutionBtn projectExecutionBtn01" href="https://veritas-shop.vercel.app/" target="_blank" data-value="weatherApp">Öffnen
                         <img src="<%=require('./assets/open-in-new.svg')%>" alt="" class="openNewWindowIcon" loading="lazy" aria-hidden='true'>
                     </a>
-                    <a class="projectGitLink projectGitLink01" href="https://github.com/denis-kohleber/wetter-app" target="_blank" aria-label="GitHub Code Link">
+
+                    <a class="projectGitLink projectGitLink01" href="https://github.com/denis-kohleber/online-shop" target="_blank" aria-label="GitHub Code Link">
                         <img src="<%=require('./assets/github.svg')%>" alt="GitHub-Logo" loading="lazy" aria-hidden='true'>
                     </a>
                 </div>
@@ -254,19 +280,29 @@
                 </div>
             </div>
 
-            <article class="project project02 section" id="chessArticle">
+            <article class="project project02 section" id="project02">
                 <div class="projectBar"></div>
+
                 <div class="projectImgContainer projectImgContainer02">
-                    <img src="<%=require('./assets/project-photos/chess-photo01.png')%>" alt="Schachspiel Hauptseite" class="projectImg03 projectImg" loading="lazy">
-                    <img src="<%=require('./assets/project-photos/chess-photo02.png')%>" alt="Schachspiel Spielbrett" class="projectImg04 projectImg" loading="lazy">
+                    <img src="<%=require('./assets/project-photos/chess-photo01.webp')%>" alt="Schachspiel Hauptseite" class="projectImg03 projectImg" loading="lazy">
+                    <img src="<%=require('./assets/project-photos/chess-photo02.webp')%>" alt="Schachspiel Spielbrett" class="projectImg04 projectImg" loading="lazy">
                 </div>
+
                 <div class="projectDescription projectDescription02">
                     <h4 class="projectHeadline projectHeadline02">Schach</h4>
                     <p class="projectCreationDate projectCreationDate02">01.06.2024</p>
-                    <p class="projectParagraph projectParagraph02">Als ich mit JavaScript Freundschaft schloss und diese immer enger wurde, benötigte ich zum nachvollziehen der Entwicklung einen Test. Ein Schachspiel eignete sich, es war zeitlich machbar, anspruchsvoll und erweiterbar. Der Fokus lag darauf, ein eigenes System zu entwickeln, um meinen Fortschritt zu erkennen.</p>
+                    <p class="projectParagraph projectParagraph02">Eines meiner ersten Projekte entstand, als ich begann, meine JavaScript-Kenntnisse weiter zu vertiefen. Um meinen Fortschritt nachvollziehen zu können, suchte ich nach einer passenden Herausforderung. Ein Schachspiel erwies sich als ideal – zeitlich umsetzbar, anspruchsvoll und flexibel erweiterbar. Der Schwerpunkt lag auf der Entwicklung eines eigenen Systems, denn sonst würde der Zweck dieses Projekts verfehlt werden.</p>
+                    <div class="projectSkillContainer">
+                        <img src="<%=require('./assets/project-skill-icons/html.svg')%>" alt="HTML" class="projectSkillIcon" loading="lazy">
+                        <img src="<%=require('./assets/project-skill-icons/css.svg')%>" alt="CSS" class="projectSkillIcon" loading="lazy">
+                        <img src="<%=require('./assets/project-skill-icons/js.svg')%>" alt="JavaScript" class="projectSkillIcon" loading="lazy">
+                        <img src="<%=require('./assets/project-skill-icons/webpack.svg')%>" alt="Webpack" class="projectSkillIcon" loading="lazy">
+                    </div>
                 </div>
+
                 <div class="projectLinkContainer02 projectLinkContainer">
                     <button class="projectExecutionBtn projectExecutionBtn02" data-value="chess">Ausführen</button>
+
                     <a class="projectGitLink projectGitLink02" href="https://github.com/denis-kohleber/chess" target="_blank" aria-label="GitHub Code Link">
                         <img src="<%=require('./assets/github.svg')%>" alt="GitHub-Logo" loading="lazy" aria-hidden='true'>
                     </a>
@@ -278,19 +314,25 @@
             <h3 class="contactHeadline">Kontakt
                 <div class="underline"></div>
             </h3>
+
             <article class="contact">
                 <p>Schreiben Sie mir <wbr>eine E-Mail an:</p>
+
                 <p class="email">denis.kohleber.contact<wbr>@gmail.com</p>
+
                 <div class="orContainer">
                     <div class="partingLine"></div>
                     <p class="orParagraph">ODER</p>
                     <div class="partingLine"></div>
                 </div>
+
                 <p>Erreichen Sie mich <wbr>über die sozialen Netzwerke:</p>
+
                 <div class="contactLinkContainer">
                     <a href="https://github.com/denis-kohleber" target="_blank" class="contactGitLink contactLink" aria-label="GitHub Link">
                         <img class="contactLinkIcon" src="<%=require('./assets/github.svg')%>" alt="GitHub-Logo" loading="lazy" aria-hidden='true'>
                     </a>
+
                     <a href="https://www.linkedin.com/in/denis-kohleber-2207b5310/" class="contactLinkedInLink contactLink" target="_blank" aria-label="LinkedIn Link">
                         <img class="contactLinkIcon" src="<%=require('./assets/linkedin.svg')%>" alt="LinkedIn-Logo" loading="lazy" aria-hidden='true'>
                     </a>
@@ -305,6 +347,7 @@
             <div class="box"></div>
             <div class="box"></div>
         </div>
+
         <p class="copyright">© Denis Kohleber 2024 -<wbr> All rights reserved</p>
     </footer>
     

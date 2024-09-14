@@ -21,7 +21,7 @@ const SideNavbar = {
 
                         // Prevent a break in the project section
                         if(sectionId === 'flower01') {
-                            sectionId = 'weatherAppArticle';
+                            sectionId = 'project01';
                         }
 
                         // Activate Dropdown
@@ -37,8 +37,8 @@ const SideNavbar = {
         const dropdownMenu = document.getElementById('dropdownMenu');
         const projectsSection = document.getElementById('projectsSectionNav');
 
-        if(sectionId === 'chessArticle' || 
-        sectionId === 'weatherAppArticle' ||
+        if(sectionId === 'project01' || 
+        sectionId === 'project02' ||
         sectionId === 'projectsSection') {
             dropdownMenu.classList.add('active');
             dropdownMenu.style.maxHeight = dropdownMenu.scrollHeight + "px";
