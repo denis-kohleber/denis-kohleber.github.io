@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 module.exports = {
     mode: "production",
@@ -55,6 +56,11 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'style.css',
         }),
+        new CopyWebpackPlugin({
+            patterns: [
+              { from: 'src/robots.txt', to: '' },
+            ],
+          }),
     ],
     module: {
         rules: [
