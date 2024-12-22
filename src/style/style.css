@@ -1745,6 +1745,13 @@ body.hideOverflow {
     gap: 30px;
 }
 
+.mailIcon.contactLinkIcon  {
+    width: 75px;
+    height: 75px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+
 .contactLinkIcon {  
     width: 60px;
     height: 60px;
