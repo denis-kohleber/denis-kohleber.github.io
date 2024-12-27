@@ -547,7 +547,7 @@ h2 {
     border-radius: min(min(2vw, 2vh), 10px);
     object-fit: cover;
     min-height: 250px;
-    max-height: min(600px, 70vh);
+    max-height: min(550px, 70vh);
 }
 
 @keyframes fade-in {
