@@ -24,6 +24,14 @@ const SideNavbar = {
                             sectionId = 'project01';
                         }
 
+                        if(sectionId === 'flower02') {
+                            sectionId = 'project02';
+                        }
+
+                        if(sectionId === 'flower03') {
+                            sectionId = 'project03';
+                        }
+
                         // Activate Dropdown
                         SideNavbar.activateDropdown(sectionId);
 
@@ -39,6 +47,8 @@ const SideNavbar = {
 
         if(sectionId === 'project01' || 
         sectionId === 'project02' ||
+        sectionId === 'project03' ||
+        sectionId === 'project04' ||
         sectionId === 'projectsSection') {
             dropdownMenu.classList.add('active');
             dropdownMenu.style.maxHeight = dropdownMenu.scrollHeight + "px";
@@ -168,13 +178,17 @@ const ServiceBox = {
 };
 
 const Flower = {
-    flower: document.getElementById('flower'),
+    flower01: document.getElementById('flower-01'),
+    flower02: document.getElementById('flower-02'),
+    flower03: document.getElementById('flower-03'),
     startAnimation() {
         let isScrolling;
 
         document.addEventListener('scroll', () => {
-            Flower.flower.style.animationPlayState = 'running';
-          
+            Flower.flower01.style.animationPlayState = 'running';
+            Flower.flower02.style.animationPlayState = 'running';
+            Flower.flower03.style.animationPlayState = 'running';
+            
             // Remove timeout after new scroll
             window.clearTimeout(isScrolling);
 
@@ -182,7 +196,9 @@ const Flower = {
             isScrolling = setTimeout(() => {
 
             // Pause the animation when scrolling stops 
-            Flower.flower.style.animationPlayState = 'paused';
+            Flower.flower01.style.animationPlayState = 'paused';
+            Flower.flower02.style.animationPlayState = 'paused';
+            Flower.flower03.style.animationPlayState = 'paused';
             }, 100);
         });
     },

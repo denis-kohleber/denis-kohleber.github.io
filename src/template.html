@@ -154,11 +154,35 @@
                             alt=""
                             loading="lazy"
                         />
-                        <p>Veritas</p>
+                        <p>VestaVital</p>
                     </a>
                     <a
                         href="#project02"
                         class="project02LinkMain navLinkMain"
+                        tabindex="-1"
+                    >
+                        <img
+                            src="<%=require('./assets/menu-right.svg')%>"
+                            alt=""
+                            loading="lazy"
+                        />
+                        <p>Veritas</p>
+                    </a>
+                    <a
+                        href="#project03"
+                        class="project03LinkMain navLinkMain"
+                        tabindex="-1"
+                    >
+                        <img
+                            src="<%=require('./assets/menu-right.svg')%>"
+                            alt=""
+                            loading="lazy"
+                        />
+                        <p>Wetter App</p>
+                    </a>
+                    <a
+                        href="#project04"
+                        class="project04LinkMain navLinkMain"
                         tabindex="-1"
                     >
                         <img
@@ -197,15 +221,13 @@
                         durch intuitive Benutzerfreundlichkeit und klares Design
                         überzeugen.
                         <br /><br />
-                        Mein Schwerpunkt liegt auf der Arbeit mit React und
-                        Next.js sowie auf der Optimierung von Performance und
-                        SEO. Gleichzeitig bin ich flexibel und offen für andere
-                        Aufgabenbereiche.
+                        Mein Schwerpunkt und primärer Fokus liegt auf der Arbeit
+                        mit React. Dennoch bin ich auch flexibel und offen für
+                        andere Einsatzgebiete.
                         <br /><br />
                         Eine strukturierte Arbeitsweise und klare Kommunikation
                         sind für mich der Schlüssel zu jedem erfolgreichen
-                        Projekt. Transparente Abläufe und eine präzise Umsetzung
-                        gewährleisten eine reibungslose Fertigstellung.
+                        Projekt.
                     </p>
                 </article>
                 <div class="serviceContainer">
@@ -300,11 +322,9 @@
                         <h4 class="serviceHeadline05 serviceHeadline">SEO</h4>
                         <p class="serviceParagraph05 serviceParagraph sr-only">
                             Das Bauen einer Seite erfolgt bei mir unter
-                            Berücksichtigung der SEO-Optimierungen, um die
-                            Sichtbarkeit sowie die Referenzierung in
-                            Suchmaschinen zu maximieren. Darüber hinaus
-                            beherrsche ich auch tiefgehende Optimierungen, die
-                            die Performance und das Ranking weiter steigern.
+                            Berücksichtigung der OnPage-SEO-Optimierungen, um
+                            die Sichtbarkeit sowie die Referenzierung in
+                            Suchmaschinen zu maximieren.
                         </p>
                     </article>
                     <article class="service06 service" tabindex="0">
@@ -573,18 +593,148 @@
 
                     <div class="projectImgContainer projectImgContainer01">
                         <img
+                            src="<%=require('./assets/project-photos/vestavital-photo01.webp')%>"
+                            alt="Vestavital Startseite"
+                            class="projectImg01 projectImg"
+                            loading="lazy"
+                        />
+                        <img
+                            src="<%=require('./assets/project-photos/vestavital-photo02.webp')%>"
+                            alt="VestaVital Artikelseite"
+                            class="projectImg02 projectImg"
+                            loading="lazy"
+                        />
+                    </div>
+
+                    <a target="_blank" href="/vestavital-photo03.webp">
+                        <img
+                            src="<%=require('./assets/project-photos/vestavital-photo03.webp')%>"
+                            alt="VestaVital Dashboard"
+                            class="projectImg03 projectImg"
+                            loading="lazy"
+                        />
+                    </a>
+
+                    <div class="projectDescription projectDescription01">
+                        <h4 class="projectHeadline projectHeadline01">
+                            VestaVital Magazin
+                        </h4>
+                        <p class="projectCreationDate projectCreationDate01">
+                            21.12.2024
+                        </p>
+                        <p class="projectParagraph projectParagraph01">
+                            Diese Online-Magazin-Demo wurde von mir mit Next.js
+                            und Payload CMS entwickelt. Es verfügt über ein
+                            vollständig integriertes Dashboard, mit dem Artikel
+                            erstellt, bearbeitet und veröffentlicht werden
+                            können. Der Fokus der Seite ist auf optimale
+                            Performance und OnPage-SEO ausgelegt, sowie die
+                            einfache Bedienung für Autoren ohne technische
+                            Kenntnisse.
+                        </p>
+                        <div class="projectSkillContainer">
+                            <img
+                                src="<%=require('./assets/project-skill-icons/html.svg')%>"
+                                alt="HTML"
+                                class="projectSkillIcon"
+                                loading="lazy"
+                            />
+                            <img
+                                src="<%=require('./assets/project-skill-icons/css.svg')%>"
+                                alt="CSS"
+                                class="projectSkillIcon"
+                                loading="lazy"
+                            />
+                            <img
+                                src="<%=require('./assets/project-skill-icons/ts.svg')%>"
+                                alt="TypeScript"
+                                class="projectSkillIcon"
+                                loading="lazy"
+                            />
+                            <img
+                                src="<%=require('./assets/project-skill-icons/react.svg')%>"
+                                alt="React"
+                                class="projectSkillIcon"
+                                loading="lazy"
+                            />
+                            <img
+                                src="<%=require('./assets/project-skill-icons/nextjs.svg')%>"
+                                alt="Next.js"
+                                class="projectSkillIcon"
+                                loading="lazy"
+                            />
+                            <img
+                                src="<%=require('./assets/project-skill-icons/payload.svg')%>"
+                                alt="Payload"
+                                class="projectSkillIcon"
+                                loading="lazy"
+                            />
+                            <img
+                                src="<%=require('./assets/project-skill-icons/mongodb.svg')%>"
+                                alt="MongoDB"
+                                class="projectSkillIcon"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="projectLinkContainer01 projectLinkContainer">
+                        <a
+                            class="projectExecutionBtn projectExecutionBtn01"
+                            href="https://www.vestavital.de/"
+                            target="_blank"
+                            data-value="weatherApp"
+                            >Öffnen
+                            <img
+                                src="<%=require('./assets/open-in-new.svg')%>"
+                                alt=""
+                                class="openNewWindowIcon"
+                                loading="lazy"
+                                aria-hidden="true"
+                            />
+                        </a>
+                    </div>
+                </article>
+
+                <div class="section flowerContainer" id="flower01">
+                    <div
+                        class="boxContainerProjectSection animate"
+                        id="flower-01"
+                    >
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                </div>
+
+                <article class="project project02 section" id="project02">
+                    <div class="projectBar"></div>
+
+                    <div class="projectImgContainer projectImgContainer01">
+                        <img
                             src="<%=require('./assets/project-photos/veritas-photo01.webp')%>"
-                            alt="Wetter-App Hauptseite"
+                            alt="Veritas Startseite"
                             class="projectImg01 projectImg"
                             loading="lazy"
                         />
                         <img
                             src="<%=require('./assets/project-photos/veritas-photo02.webp')%>"
-                            alt="Wetter-App 3 Tagesübersicht Seite"
+                            alt="Veritas Produktseite"
                             class="projectImg02 projectImg"
                             loading="lazy"
                         />
                     </div>
+
+                    <a target="_blank" href="/veritas-photo03.webp">
+                        <img
+                            src="<%=require('./assets/project-photos/veritas-photo03.webp')%>"
+                            alt="Veritas Warenkorb"
+                            class="projectImg03 projectImg"
+                            loading="lazy"
+                        />
+                    </a>
 
                     <div class="projectDescription projectDescription01">
                         <h4 class="projectHeadline projectHeadline01">
@@ -666,8 +816,11 @@
                     </div>
                 </article>
 
-                <div class="section flowerContainer" id="flower01">
-                    <div class="boxContainerProjectSection animate" id="flower">
+                <div class="section flowerContainer" id="flower02">
+                    <div
+                        class="boxContainerProjectSection animate"
+                        id="flower-02"
+                    >
                         <div class="box"></div>
                         <div class="box"></div>
                         <div class="box"></div>
@@ -676,20 +829,111 @@
                     </div>
                 </div>
 
-                <article class="project project02 section" id="project02">
+                <article class="project project03 section" id="project03">
+                    <div class="projectBar"></div>
+
+                    <div class="projectImgContainer projectImgContainer01">
+                        <img
+                            src="<%=require('./assets/project-photos/weatherapp-photo01.webp')%>"
+                            alt="Wetter-App Hauptseite"
+                            class="projectImg01 projectImg"
+                            loading="lazy"
+                        />
+                        <img
+                            src="<%=require('./assets/project-photos/weatherapp-photo02.webp')%>"
+                            alt="Wetter-App 3 Tagesübersicht Seite"
+                            class="projectImg02 projectImg"
+                            loading="lazy"
+                        />
+                    </div>
+
+                    <div class="projectDescription projectDescription01">
+                        <h4 class="projectHeadline projectHeadline01">
+                            Wetter App
+                        </h4>
+                        <p class="projectCreationDate projectCreationDate01">
+                            16.03.2024
+                        </p>
+                        <p class="projectParagraph projectParagraph01">
+                            Eine einfache Wetter-App, die das aktuelle Wetter
+                            sowie eine 3-Tage-Vorhersage anzeigt. Die Daten
+                            werden von einer Wetter API bereitgestellt. Die App
+                            wurde ohne Zuhilfenahme von Frameworks entwickelt,
+                            nur reines JS.
+                        </p>
+                        <div class="projectSkillContainer">
+                            <img
+                                src="<%=require('./assets/project-skill-icons/html.svg')%>"
+                                alt="HTML"
+                                class="projectSkillIcon"
+                                loading="lazy"
+                            />
+                            <img
+                                src="<%=require('./assets/project-skill-icons/css.svg')%>"
+                                alt="CSS"
+                                class="projectSkillIcon"
+                                loading="lazy"
+                            />
+                            <img
+                                src="<%=require('./assets/project-skill-icons/js.svg')%>"
+                                alt="JavaScript"
+                                class="projectSkillIcon"
+                                loading="lazy"
+                            />
+                            <img
+                                src="<%=require('./assets/project-skill-icons/webpack.svg')%>"
+                                alt="Webpack"
+                                class="projectSkillIcon"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="projectLinkContainer01 projectLinkContainer">
+                        <a
+                            class="projectExecutionBtn projectExecutionBtn01"
+                            href="https://denis-kohleber.github.io/wetter-app/"
+                            target="_blank"
+                            data-value="weatherApp"
+                            >Öffnen
+                            <img
+                                src="<%=require('./assets/open-in-new.svg')%>"
+                                alt=""
+                                class="openNewWindowIcon"
+                                loading="lazy"
+                                aria-hidden="true"
+                            />
+                        </a>
+                    </div>
+                </article>
+
+                <div class="section flowerContainer" id="flower03">
+                    <div
+                        class="boxContainerProjectSection animate"
+                        id="flower-03"
+                    >
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                </div>
+
+                <article class="project project04 section" id="project04">
                     <div class="projectBar"></div>
 
                     <div class="projectImgContainer projectImgContainer02">
                         <img
                             src="<%=require('./assets/project-photos/chess-photo01.webp')%>"
                             alt="Schachspiel Hauptseite"
-                            class="projectImg03 projectImg"
+                            class="projectImg01 projectImg"
                             loading="lazy"
                         />
                         <img
                             src="<%=require('./assets/project-photos/chess-photo02.webp')%>"
                             alt="Schachspiel Spielbrett"
-                            class="projectImg04 projectImg"
+                            class="projectImg02 projectImg"
                             loading="lazy"
                         />
                     </div>
