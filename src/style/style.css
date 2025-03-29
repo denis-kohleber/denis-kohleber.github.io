@@ -5,6 +5,8 @@
     --secondaryColor: #ffffff;
     --secondaryColor2: #a3a3a3;
     --accentColor: #ffd470;
+    --accentColor2: #ffd47027;
+    --accentColor3: #e4be66;
     --complementary: #709bff;
     --gray: #303030;
 }
@@ -1268,7 +1270,8 @@ main > * {
     display: flex;
     align-items: center;
     gap: 15px;
-    max-width: 620px;
+    max-width: 500px;
+    flex-flow: wrap;
 }
 
 .projectHeadline {
@@ -1283,6 +1286,7 @@ main > * {
 .projectSkillContainer {
     display: flex;
     gap: 10px;
+    flex-flow: wrap;
 }
 
 .projectSkillIcon {
@@ -1296,10 +1300,10 @@ main > * {
     margin: 20px 0;
 }
 
-.projectExecutionBtn {
+.projectExecutionBtn,
+.codeLinkBtn {
     background-color: var(--accentColor);
-    height: 50px;
-    width: 140px;
+    flex: 1;
     border: none;
     border-radius: 10px;
     font-size: 1.2rem;
@@ -1308,25 +1312,47 @@ main > * {
     align-items: center;
     justify-content: center;
     gap: 5px;
+    padding: 12px 15px;
     cursor: pointer;
     text-decoration: none;
     color: var(--primaryColor);
+    white-space: nowrap;
+    max-width: 150px;
+    border: 2px solid var(--accentColor);
 }
 
-.openNewWindowIcon {
-    width: 22px;
+@media screen and (max-width: 600px) {
+    .projectExecutionBtn,
+    .codeLinkBtn {
+        max-width: none;
+        min-width: 150px;
+    }
+}
+
+.codeLinkBtn {
+    background-color: transparent;
+    color: var(--accentColor);
+    border: 2px solid var(--accentColor);
+}
+
+.openNewWindowIcon,
+.codeLinkBtn > img {
+    width: 26px;
+}
+
+.codeLinkBtn > img {
+    filter: var(--filterYellow);
 }
 
 .projectExecutionBtn:hover,
 .projectExecutionBtn:focus {
-    background-color: var(--secondaryColor);
+    background-color: var(--accentColor3);
+    border-color: var(--accentColor3);
 }
 
-.projectGitLink > img {
-    height: 40px;
-    width: 40px;
-    filter: var(--filterWhite);
-    transition: transform 0.15s linear;
+.codeLinkBtn:hover,
+.codeLinkBtn:focus {
+    background-color: var(--accentColor2);
 }
 
 .projectGitLink > img:hover,

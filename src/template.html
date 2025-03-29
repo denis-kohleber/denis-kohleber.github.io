@@ -624,9 +624,9 @@
                             vollständig integriertes Dashboard, mit dem Artikel
                             erstellt, bearbeitet und veröffentlicht werden
                             können. Der Fokus der Seite ist auf optimale
-                            Performance und OnPage-SEO ausgelegt, sowie die
-                            einfache Bedienung für Autoren ohne technische
-                            Kenntnisse.
+                            Performance, Core Web Vitals sowie OnPage-SEO
+                            ausgelegt, sowie die einfache Bedienung für Nutzer
+                            ohne technische Kenntnisse.
                         </p>
                         <div class="projectSkillContainer">
                             <img
@@ -692,6 +692,20 @@
                                 src="<%=require('./assets/open-in-new.svg')%>"
                                 alt=""
                                 class="openNewWindowIcon"
+                                loading="lazy"
+                                aria-hidden="true"
+                            />
+                        </a>
+                        <a
+                            class="codeLinkBtn"
+                            href="https://github.com/denis-kohleber/vestavital"
+                            target="_blank"
+                            aria-label="GitHub Code Link"
+                        >
+                            Zum Code
+                            <img
+                                src="<%=require('./assets/github.svg')%>"
+                                alt="GitHub-Logo"
                                 loading="lazy"
                                 aria-hidden="true"
                             />
@@ -809,11 +823,12 @@
                             />
                         </a>
                         <a
-                            class="projectGitLink projectGitLink01"
+                            class="codeLinkBtn"
                             href="https://github.com/denis-kohleber/online-shop"
                             target="_blank"
                             aria-label="GitHub Code Link"
                         >
+                            Zum Code
                             <img
                                 src="<%=require('./assets/github.svg')%>"
                                 alt="GitHub-Logo"
